@@ -1,12 +1,6 @@
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Toolbar,
-  Typography,
-} from '@mui/material';
+import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import { ReactNode } from 'react';
+import * as S from './material-styles';
 
 type Props = {
   children: ReactNode;
@@ -14,15 +8,9 @@ type Props = {
 
 export const LayoutBase: React.FC<Props> = ({ children }) => {
   return (
-    <Box>
-      <AppBar component="nav">
+    <S.LayoutWrapper>
+      <AppBar component="nav" sx={{ px: { xl: 25, sm: 1, xs: 1 } }}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          ></IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Federação de Judô
           </Typography>
@@ -31,10 +19,10 @@ export const LayoutBase: React.FC<Props> = ({ children }) => {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ px: { xl: 28, sm: 4, xs: 3 }, py: 3 }}>
         <Toolbar />
         {children}
       </Box>
-    </Box>
+    </S.LayoutWrapper>
   );
 };

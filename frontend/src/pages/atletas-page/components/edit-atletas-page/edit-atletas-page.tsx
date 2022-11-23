@@ -1,8 +1,8 @@
+import { Edit } from '@mui/icons-material';
 import { Box, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { PageHeader } from '../../../../shared/components';
 import { LayoutBase } from '../../../../shared/layout';
-import { Edit } from '@mui/icons-material';
 
 export const EditAtletasPage: React.FC = () => {
   const navigate = useNavigate();
