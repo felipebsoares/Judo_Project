@@ -14,7 +14,7 @@ type Props = {
 
 export const LayoutBase: React.FC<Props> = ({ children }) => {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box>
       <AppBar component="nav">
         <Toolbar>
           <IconButton

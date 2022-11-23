@@ -5,7 +5,6 @@ export const Header = styled(Box)`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
-  width: 100%;
 `;
 
 export const HeaderWrapping = styled(Box)`
