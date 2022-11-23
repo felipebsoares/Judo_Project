@@ -1,10 +1,9 @@
-import { Routes, Route } from 'react-router-dom';
-import { Login } from '../pages';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './app.routes';
+import { AuthRoutes } from './auth.routes';
 
-export const AppRoutes = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-    </Routes>
-  );
-};
+export function Routes() {
+  const user = false;
+
+  return <BrowserRouter>{user ? <AppRoutes /> : <AuthRoutes />}</BrowserRouter>;
+}

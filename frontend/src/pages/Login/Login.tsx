@@ -39,7 +39,7 @@ export const Login: React.FC = () => {
 
         <Link
           href="#"
-          variant="body2"
+          variant="body1"
           underline="always"
           sx={{ textAlign: 'center' }}
         >
