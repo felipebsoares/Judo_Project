@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Application\\Judo.Application.csproj",
-      "projectName": "Judo.Application",
-      "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Application\\Judo.Application.csproj",
+      "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Infra.Data\\Judo.Infra.Data.csproj",
+      "projectName": "Judo.Infra.Data",
+      "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Infra.Data\\Judo.Infra.Data.csproj",
       "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Application\\obj\\",
+      "outputPath": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Infra.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config"
