@@ -1,16 +1,20 @@
-import * as React from 'react';
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
-import { LayoutBase } from '../../shared/layout';
-import { Box, Button } from '@mui/material';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { SportsKabaddi } from '@mui/icons-material';
+import {
+  Box,
+  Button,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from '@mui/material';
 import { PageHeader } from '../../shared/components';
-import { Visibility } from '@mui/icons-material';
+import { LayoutBase } from '../../shared/layout';
 
 interface Column {
   id: 'name' | 'code' | 'population' | 'size' | 'density';
@@ -83,8 +87,9 @@ const rows = [
 ];
 
 export const AtletasPage: React.FC = () => {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const navigate = useNavigate();
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -103,8 +108,15 @@ export const AtletasPage: React.FC = () => {
         <PageHeader
           title="Atletas"
           description="Página de gerenciamento dos Atletas"
-          icon={Visibility}
-          action={<Button variant="contained">Novo</Button>}
+          icon={SportsKabaddi}
+          action={
+            <Button
+              variant="contained"
+              onClick={() => navigate('/atletas/cadastro')}
+            >
+              Novo
+            </Button>
+          }
         />
 
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>

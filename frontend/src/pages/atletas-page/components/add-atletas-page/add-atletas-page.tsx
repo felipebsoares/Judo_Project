@@ -1,3 +1,27 @@
+import { Box, Button } from '@mui/material';
+import { PageHeader } from '../../../../shared/components';
+import { LayoutBase } from '../../../../shared/layout';
+import { Add } from '@mui/icons-material';
+
+import { useNavigate } from 'react-router-dom';
+
 export const AddAtletasPage: React.FC = () => {
-  return <div></div>;
+  const navigate = useNavigate();
+
+  return (
+    <LayoutBase>
+      <Box>
+        <PageHeader
+          title="Cadastrar Atletas"
+          description="Use o formulário abaixo para cadastrar um novo atleta"
+          icon={Add}
+          action={
+            <Button variant="contained" onClick={() => navigate('/atletas')}>
+              Voltar
+            </Button>
+          }
+        />
+      </Box>
+    </LayoutBase>
+  );
 };
