@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Infra.Data\\Judo.Infra.Data.csproj": {}
+    "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\Judo.Infra.Data\\Judo.Infra.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Infra.Data\\Judo.Infra.Data.csproj": {
+    "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\Judo.Infra.Data\\Judo.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Infra.Data\\Judo.Infra.Data.csproj",
+        "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\Judo.Infra.Data\\Judo.Infra.Data.csproj",
         "projectName": "Judo.Infra.Data",
-        "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Infra.Data\\Judo.Infra.Data.csproj",
+        "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\Judo.Infra.Data\\Judo.Infra.Data.csproj",
         "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\src\\Judo.Infra.Data\\obj\\",
+        "outputPath": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\Judo.Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
