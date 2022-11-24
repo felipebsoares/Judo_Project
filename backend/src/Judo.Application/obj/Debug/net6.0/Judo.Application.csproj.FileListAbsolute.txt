@@ -1,0 +1,5 @@
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\src\Judo.Application\obj\Debug\net6.0\Judo.Application.csproj.AssemblyReference.cache
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\src\Judo.Application\obj\Debug\net6.0\Judo.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\src\Judo.Application\obj\Debug\net6.0\Judo.Application.AssemblyInfoInputs.cache
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\src\Judo.Application\obj\Debug\net6.0\Judo.Application.AssemblyInfo.cs
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\src\Judo.Application\obj\Debug\net6.0\Judo.Application.csproj.CoreCompileInputs.cache
