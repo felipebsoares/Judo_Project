@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProjetoJudo.Domain.Contracts;
 using ProjetoJudo.Domain.Entities;
 
 namespace ProjetoJudo.Infra.Context
 {
-    public partial class JudoDesContext : DbContext
+    public partial class JudoDesContext : DbContext, IUnitOfWork
     {
         public JudoDesContext()
         {
@@ -5530,5 +5531,11 @@ namespace ProjetoJudo.Infra.Context
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            return base.SaveChangesAsync(cancellationToken);
+        }
+        public async Task<bool> Commit() => await SaveChangesAsync() > 0;
     }
 }
