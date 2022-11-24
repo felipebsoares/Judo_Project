@@ -1,0 +1,14 @@
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\bin\Debug\net6.0\ProjetoJudo.Infra.deps.json
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\bin\Debug\net6.0\ProjetoJudo.Infra.dll
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\bin\Debug\net6.0\ProjetoJudo.Infra.pdb
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.csproj.AssemblyReference.cache
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.AssemblyInfoInputs.cache
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.AssemblyInfo.cs
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.csproj.CoreCompileInputs.cache
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.dll
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\refint\ProjetoJudo.Infra.dll
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.pdb
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ref\ProjetoJudo.Infra.dll
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\bin\Debug\net6.0\ProjetoJudo.Infra.runtimeconfig.json
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.genruntimeconfig.cache
