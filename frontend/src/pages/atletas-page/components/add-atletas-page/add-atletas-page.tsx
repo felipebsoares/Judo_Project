@@ -41,6 +41,22 @@ export const AddAtletasPage: React.FC = () => {
           <AtletasForm />
         </CardContent>
       </Card>
+
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'end',
+          gap: 2,
+          py: 2,
+        }}
+      >
+        <Button variant="contained" color="error">
+          Cancelar
+        </Button>
+        <Button variant="contained" color="primary">
+          Salvar
+        </Button>
+      </Box>
     </LayoutBase>
   );
 };

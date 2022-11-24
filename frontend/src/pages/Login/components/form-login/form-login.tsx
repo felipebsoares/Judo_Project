@@ -10,6 +10,7 @@ import {
   IconButton,
 } from '@mui/material';
 import { LoginForm } from '../../../../shared/domain-types';
+import { TextFieldInput } from '../../../../shared/components';
 
 type Props = {
   onSubmit: SubmitHandler<LoginForm>;
@@ -32,8 +33,9 @@ export const FormLogin: React.FC<Props> = ({ onSubmit, isLoading }) => {
           name="email"
           control={control}
           render={({ field }) => (
-            <TextField
+            <TextFieldInput
               required
+              variant="filled"
               fullWidth
               label="Email"
               type="email"
@@ -48,8 +50,9 @@ export const FormLogin: React.FC<Props> = ({ onSubmit, isLoading }) => {
           name="password"
           control={control}
           render={({ field }) => (
-            <TextField
+            <TextFieldInput
               required
+              variant="filled"
               fullWidth
               label="Senha"
               type={showPassword ? 'text' : 'password'}
@@ -76,8 +79,9 @@ export const FormLogin: React.FC<Props> = ({ onSubmit, isLoading }) => {
           name="client"
           control={control}
           render={({ field }) => (
-            <TextField
+            <TextFieldInput
               required
+              variant="filled"
               fullWidth
               label="Cliente"
               type="text"

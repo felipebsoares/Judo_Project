@@ -22,6 +22,9 @@ export const RedditTextField = styled((props: TextFieldProps) => (
       'background-color',
       'box-shadow',
     ]),
+    '&:before, &:after': {
+      content: 'none',
+    },
     '&.Mui-focused': {
       backgroundColor: '#fcfcfb',
       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 2px`,

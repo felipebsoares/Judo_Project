@@ -1,8 +1,16 @@
 import { Edit } from '@mui/icons-material';
-import { Box, Button } from '@mui/material';
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Divider,
+  Typography,
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { PageHeader } from '../../../../shared/components';
 import { LayoutBase } from '../../../../shared/layout';
+import { AtletasForm } from '../../components';
 
 export const EditAtletasPage: React.FC = () => {
   const navigate = useNavigate();
@@ -19,6 +27,35 @@ export const EditAtletasPage: React.FC = () => {
           </Button>
         }
       />
+
+      <Card>
+        <CardContent>
+          <Box sx={{ mb: 2 }}>
+            <Typography gutterBottom variant="h6" component="div">
+              Dados do Atleta
+            </Typography>
+
+            <Divider />
+          </Box>
+          <AtletasForm />
+        </CardContent>
+      </Card>
+
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'end',
+          gap: 2,
+          py: 2,
+        }}
+      >
+        <Button variant="contained" color="error">
+          Cancelar
+        </Button>
+        <Button variant="contained" color="primary">
+          Salvar
+        </Button>
+      </Box>
     </LayoutBase>
   );
 };
