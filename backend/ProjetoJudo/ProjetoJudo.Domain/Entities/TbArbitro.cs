@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ProjetoJudo.Infra
+namespace ProjetoJudo.Domain.Entities
 {
     public partial class TbArbitro
     {
