@@ -6,3 +6,23 @@ export interface PageHeaderProps {
   icon: ComponentType;
   action?: ReactNode;
 }
+
+export type TableData = {
+  name: string;
+  calories: number;
+  fat: number;
+  carbs: number;
+  protein: number;
+};
+
+export type TableProps = {
+  rows: TableData[];
+};
+
+export type ModalProps = {
+  handleClickOpen: () => void;
+  handleClose: () => void;
+  open: boolean;
+};
+
+export type ConfirmModalProps = Omit<ModalProps, 'handleClickOpen'>;

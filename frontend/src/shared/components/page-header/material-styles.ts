@@ -19,7 +19,12 @@ export const IconWrapper = styled(Box)`
   width: 56px;
   height: 56px;
   border-radius: 0.25rem;
-  background-color: #323238;
+  background-color: #fff;
   color: #fff;
   margin-right: 1.2rem;
+
+  svg {
+    fill: #1976d2;
+    font-size: 1.75rem;
+  }
 `;
