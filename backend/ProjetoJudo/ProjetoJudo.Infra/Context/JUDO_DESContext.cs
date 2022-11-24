@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProjetoJudo.Domain.Entities;
 
 namespace ProjetoJudo.Infra.Context
 {
