@@ -3,7 +3,7 @@ import { AppRoutes } from './app.routes';
 import { AuthRoutes } from './auth.routes';
 
 export function Routes() {
-  const user = true;
+  const user = false;
 
   return <BrowserRouter>{user ? <AppRoutes /> : <AuthRoutes />}</BrowserRouter>;
 }

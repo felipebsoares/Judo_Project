@@ -17,6 +17,7 @@ export type TableData = {
 
 export type TableProps = {
   rows: TableData[];
+  removeModal: () => void;
 };
 
 export type ModalProps = {
@@ -25,4 +26,7 @@ export type ModalProps = {
   open: boolean;
 };
 
-export type ConfirmModalProps = Omit<ModalProps, 'handleClickOpen'>;
+export type ConfirmModalProps = Omit<ModalProps, 'handleClickOpen'> & {
+  title: string;
+  message: string;
+};

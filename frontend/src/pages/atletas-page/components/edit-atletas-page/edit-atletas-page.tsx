@@ -9,18 +9,16 @@ export const EditAtletasPage: React.FC = () => {
 
   return (
     <LayoutBase>
-      <Box>
-        <PageHeader
-          title="Edição Atletas"
-          description="Use o formulário abaixo para atualizar os dados do atleta em nosso banco de dados"
-          icon={Edit}
-          action={
-            <Button variant="contained" onClick={() => navigate('/atletas')}>
-              Voltar
-            </Button>
-          }
-        />
-      </Box>
+      <PageHeader
+        title="Edição Atletas"
+        description="Use o formulário abaixo para atualizar os dados do atleta em nosso banco de dados"
+        icon={Edit}
+        action={
+          <Button variant="contained" onClick={() => navigate('/atletas')}>
+            Voltar
+          </Button>
+        }
+      />
     </LayoutBase>
   );
 };

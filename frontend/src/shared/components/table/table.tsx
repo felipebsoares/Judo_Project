@@ -12,7 +12,7 @@ import {
 import * as S from './material-styles';
 import { TableProps } from '../types';
 
-export const Table: React.FC<TableProps> = ({ rows }) => {
+export const Table: React.FC<TableProps> = ({ rows, removeModal }) => {
   const navigate = useNavigate();
 
   return (
@@ -46,7 +46,7 @@ export const Table: React.FC<TableProps> = ({ rows }) => {
               </S.StyledTableCell>
               <S.StyledTableCell align="center">
                 <IconButton size="small">
-                  <Delete />
+                  <Delete onClick={removeModal} />
                 </IconButton>
                 <IconButton size="small">
                   <Edit onClick={() => navigate(`/atletas/${index}`)} />

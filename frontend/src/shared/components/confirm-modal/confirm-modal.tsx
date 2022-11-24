@@ -11,27 +11,24 @@ import { ConfirmModalProps } from '../types';
 export const ConfirmModal: React.FC<ConfirmModalProps> = ({
   handleClose,
   open,
+  title,
+  message,
 }) => {
   return (
-    <Dialog
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="draggable-dialog-title"
-    >
-      <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
-        Subscribe
+    <Dialog open={open} onClose={handleClose}>
+      <DialogTitle sx={{ padding: '1.5rem 1.5rem 1rem 1.5rem' }}>
+        {title}
       </DialogTitle>
       <DialogContent>
-        <DialogContentText>
-          To subscribe to this website, please enter your email address here. We
-          will send updates occasionally.
-        </DialogContentText>
+        <DialogContentText>{message}</DialogContentText>
       </DialogContent>
-      <DialogActions>
-        <Button autoFocus onClick={handleClose}>
-          Cancel
+      <DialogActions sx={{ paddingBottom: '1.5rem', paddingRight: '1.5rem' }}>
+        <Button variant="contained" color="error" onClick={handleClose}>
+          Fechar
         </Button>
-        <Button onClick={handleClose}>Subscribe</Button>
+        <Button variant="contained" color="primary" onClick={handleClose}>
+          Confirmar
+        </Button>
       </DialogActions>
     </Dialog>
   );
