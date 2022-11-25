@@ -13,9 +13,10 @@ export const ConfirmModal: React.FC<ConfirmModalProps> = ({
   open,
   title,
   message,
+  maxWidth = 'sm',
 }) => {
   return (
-    <Dialog open={open} onClose={handleClose}>
+    <Dialog maxWidth={maxWidth} open={open} onClose={handleClose}>
       <DialogTitle sx={{ padding: '1.5rem 1.5rem 1rem 1.5rem' }}>
         {title}
       </DialogTitle>

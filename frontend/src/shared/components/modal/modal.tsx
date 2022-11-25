@@ -1,55 +1,16 @@
-import { Close } from '@mui/icons-material';
 import {
   Button,
   DialogActions,
   DialogContent,
-  DialogTitle,
-  IconButton,
   Typography,
 } from '@mui/material';
 import { ModalProps } from '../types';
-import * as S from './material-style';
+import { BootstrapDialogTitle } from './components';
+import * as S from './styles';
 
-export interface DialogTitleProps {
-  id: string;
-  children?: React.ReactNode;
-  onClose: () => void;
-}
-
-const BootstrapDialogTitle = (props: DialogTitleProps) => {
-  const { children, onClose, ...other } = props;
-
-  return (
-    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
-      {children}
-      {onClose ? (
-        <IconButton
-          aria-label="close"
-          onClick={onClose}
-          sx={{
-            position: 'absolute',
-            right: 8,
-            top: 8,
-            color: (theme) => theme.palette.grey[500],
-          }}
-        >
-          <Close />
-        </IconButton>
-      ) : null}
-    </DialogTitle>
-  );
-};
-
-export const Modal: React.FC<ModalProps> = ({
-  handleClickOpen,
-  handleClose,
-  open,
-}) => {
+export const Modal: React.FC<ModalProps> = ({ handleClose, open }) => {
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open dialog
-      </Button>
       <S.BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"

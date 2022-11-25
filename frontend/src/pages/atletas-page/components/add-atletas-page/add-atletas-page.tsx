@@ -50,7 +50,11 @@ export const AddAtletasPage: React.FC = () => {
           py: 2,
         }}
       >
-        <Button variant="contained" color="error">
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => navigate('/atletas')}
+        >
           Cancelar
         </Button>
         <Button variant="contained" color="primary">

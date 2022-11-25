@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import { PageHeaderProps } from '../types';
-import * as S from './material-styles';
+import * as S from './styles';
 
 export const PageHeader: React.FC<PageHeaderProps> = ({
   description,

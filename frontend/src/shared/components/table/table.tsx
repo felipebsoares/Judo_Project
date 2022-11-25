@@ -9,7 +9,7 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
-import * as S from './material-styles';
+import * as S from './styles';
 import { TableProps } from '../types';
 
 export const Table: React.FC<TableProps> = ({ rows, removeModal }) => {

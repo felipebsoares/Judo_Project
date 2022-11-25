@@ -1,8 +1,6 @@
-import { TextFieldProps } from '@mui/material';
-import * as S from './material-styles';
+import { TextFieldInputProps } from '../types';
+import { RedditTextField } from './components';
 
-type Props = TextFieldProps;
-
-export const TextFieldInput: React.FC<Props> = ({ ...rest }) => {
-  return <S.RedditTextField {...rest} />;
+export const TextFieldInput: React.FC<TextFieldInputProps> = ({ ...rest }) => {
+  return <RedditTextField {...rest} />;
 };

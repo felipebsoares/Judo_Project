@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { SportsKabaddi } from '@mui/icons-material';
 import { useModal } from '../../shared/hooks';
 import { LayoutBase } from '../../shared/layout';
-import { PageHeader, TableData, Table } from '../../shared/components';
+import { PageHeader, TableData, Table, Modal } from '../../shared/components';
 import { RemoveAtletasModal } from './components';
 
 const rows: TableData[] = [
@@ -33,10 +33,7 @@ export const AtletasPage: React.FC = () => {
           description="Página de gerenciamento dos Atletas"
           icon={SportsKabaddi}
           action={
-            <Button
-              variant="contained"
-              onClick={() => navigate('/atletas/cadastro')}
-            >
+            <Button variant="contained" onClick={openAddModal}>
               Novo
             </Button>
           }
@@ -44,11 +41,11 @@ export const AtletasPage: React.FC = () => {
         <Table rows={rows} removeModal={openRemoveModal} />
       </LayoutBase>
 
-      {/* <Modal
+      <Modal
         handleClickOpen={openAddModal}
         handleClose={closeAddModal}
         open={isAddModalOpen}
-      /> */}
+      />
 
       <RemoveAtletasModal
         handleClose={closeRemoveModal}
