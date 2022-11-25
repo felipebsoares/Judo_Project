@@ -25,9 +25,16 @@ export type ModalProps = {
   handleClickOpen: () => void;
   handleClose: () => void;
   open: boolean;
+  title: string;
+  children?: ReactNode;
+  maxWidth?: false | Breakpoint | undefined;
+  actions?: ReactNode[];
 };
 
-export type ConfirmModalProps = Omit<ModalProps, 'handleClickOpen'> & {
+export type ConfirmModalProps = Omit<
+  ModalProps,
+  'handleClickOpen' | 'children'
+> & {
   title: string;
   message: string;
   maxWidth?: false | Breakpoint | undefined;

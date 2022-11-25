@@ -6,248 +6,45 @@ export const AtletasForm: React.FC = () => {
     <form>
       <Grid container spacing={2}>
         <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
+          <TextFieldInput fullWidth label="Name" variant="filled" />
         </Grid>
 
         <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
+          <TextFieldInput fullWidth label="Senha" variant="filled" />
         </Grid>
         <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
+          <TextFieldInput fullWidth label="Email" variant="filled" />
         </Grid>
         <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
+          <TextFieldInput fullWidth label="Reddit" variant="filled" />
+        </Grid>
+
+        <Grid item lg={3} xs={12}>
+          <TextFieldInput fullWidth label="Name" variant="filled" />
+        </Grid>
+
+        <Grid item lg={3} xs={12}>
+          <TextFieldInput fullWidth label="Senha" variant="filled" />
         </Grid>
         <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
+          <TextFieldInput fullWidth label="Email" variant="filled" />
         </Grid>
         <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
+          <TextFieldInput fullWidth label="Reddit" variant="filled" />
+        </Grid>
+
+        <Grid item lg={3} xs={12}>
+          <TextFieldInput fullWidth label="Name" variant="filled" />
+        </Grid>
+
+        <Grid item lg={3} xs={12}>
+          <TextFieldInput fullWidth label="Senha" variant="filled" />
         </Grid>
         <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
+          <TextFieldInput fullWidth label="Email" variant="filled" />
         </Grid>
         <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
-        </Grid>
-        <Grid item lg={3} xs={12}>
-          <TextFieldInput
-            fullWidth
-            label="Reddit"
-            defaultValue="react-reddit"
-            id="reddit-input"
-            variant="filled"
-          />
+          <TextFieldInput fullWidth label="Reddit" variant="filled" />
         </Grid>
       </Grid>
     </form>
