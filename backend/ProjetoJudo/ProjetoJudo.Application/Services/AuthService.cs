@@ -86,12 +86,11 @@ public class AuthService : IAuthService
         {
             Subject = new ClaimsIdentity(new Claim[]
             {
-                    
                 new (ClaimTypes.NameIdentifier, user.IdUsuario.ToString()),
                 new (ClaimTypes.Name, user.Nome),
                 new (ClaimTypes.Role, user.Email)
             }),
-            Expires = DateTime.UtcNow.AddHours(2),
+            Expires = DateTime.UtcNow.AddMinutes(5),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
         var token = tokenHandler.CreateToken(tokenDescriptor);
