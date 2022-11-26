@@ -2,7 +2,9 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy ASP.Net Core app to Azure Web App - JudoAPI
-
+defaults:
+      run:
+        working-directory: backend/ProjetoJudo/
 on:
   push:
     branches:
@@ -24,7 +26,6 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
-        working-directory: backend/ProjetoJudo/
         
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
