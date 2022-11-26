@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Dy7ZFmZQizCdtg+yN1i4I7veuLVZKvJaoN9RqrRwXNf7KGpk0w97jDg766S3ucXvHerZHzbr9DjHR+x2FWcZ3w==",
+  "dgSpecHash": "t4KJPr8+fKfuAZcroVseZfiP3r3t7+12txsTHz5Yv3eCsuCoEnw0dnD4IuvtcucQTweDtzI+Fu3tJXNVd08Ing==",
   "success": true,
   "projectFilePath": "C:\\Users\\felip\\OneDrive\\Documentos\\PetFinderAPI\\Judo_Project\\backend\\ProjetoJudo\\ProjetoJudo.Infra\\ProjetoJudo.Infra.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\felip\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\felip\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\felip\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\felip\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
