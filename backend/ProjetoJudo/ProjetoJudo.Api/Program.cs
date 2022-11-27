@@ -12,10 +12,19 @@ using ProjetoJudo.Application.Services;
 using ProjetoJudo.Domain.Contracts.Repositories;
 using ProjetoJudo.Domain.Entities;
 using ProjetoJudo.Domain.Validations;
-using ProjetoJudo.Infra.Context;
+using ProjetoJudo.Infra;
 using ProjetoJudo.Infra.Repositories;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Ajustar o configuration
+builder
+    .Configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", true, true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
+    .AddEnvironmentVariables();
 
 // Add services to the container.
 builder.Services
@@ -25,7 +34,19 @@ builder.Services
 builder.Services
     .AddScoped<IValidator<TbUsuario>, UsuarioValidation>()
     .AddScoped<IPasswordHasher<TbUsuario>, PasswordHasher<TbUsuario>>();
-builder.Services.AddDbContext<JudoDesContext>();
+
+//Db
+builder.Services.ConfigureDataBase(builder.Configuration);
+
+//Melhorar os logs
+builder
+    .Host
+    .UseSystemd()
+    .UseSerilog((_, lc) =>
+    {
+        lc.WriteTo.Console();
+        lc.WriteTo.Debug();
+    });
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

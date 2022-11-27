@@ -6,14 +6,9 @@ namespace ProjetoJudo.Infra.Context
 {
     public partial class JudoDesContext : DbContext, IUnitOfWork
     {
-        public JudoDesContext()
-        {
-        }
+        public JudoDesContext() { }
 
-        public JudoDesContext(DbContextOptions<JudoDesContext> options)
-            : base(options)
-        {
-        }
+        public JudoDesContext(DbContextOptions<JudoDesContext> options) : base(options) { }
 
         public virtual DbSet<TbAgremiaco> TbAgremiacoes { get; set; } = null!;
         public virtual DbSet<TbAgremiacoesProfessore> TbAgremiacoesProfessores { get; set; } = null!;
@@ -107,16 +102,7 @@ namespace ProjetoJudo.Infra.Context
         public virtual DbSet<TbTransferencia> TbTransferencias { get; set; } = null!;
         public virtual DbSet<TbUsuario> TbUsuarios { get; set; } = null!;
         public virtual DbSet<TbValoresDefault> TbValoresDefaults { get; set; } = null!;
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-GEA1R2I;Database=JUDO_API;Trusted_Connection=True;");
-            }
-        }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TbAgremiaco>(entity =>
@@ -5526,10 +5512,10 @@ namespace ProjetoJudo.Infra.Context
                     .HasForeignKey(d => new { d.IdCliente, d.IdPais, d.IdEstado, d.IdCidade })
                     .HasConstraintName("FK_VALORES_DEFAULT_CIDADES");
             });
-
+            
             OnModelCreatingPartial(modelBuilder);
         }
-
+        
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
         
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

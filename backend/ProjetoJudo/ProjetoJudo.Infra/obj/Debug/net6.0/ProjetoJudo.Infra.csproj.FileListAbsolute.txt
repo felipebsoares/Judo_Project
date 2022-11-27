@@ -29,3 +29,6 @@ C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo
 C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.pdb
 C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.genruntimeconfig.cache
 C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ref\ProjetoJudo.Infra.dll
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\bin\Debug\net6.0\ProjetoJudo.Domain.dll
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\bin\Debug\net6.0\ProjetoJudo.Domain.pdb
+C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Infra\obj\Debug\net6.0\ProjetoJudo.Infra.csproj.CopyComplete
