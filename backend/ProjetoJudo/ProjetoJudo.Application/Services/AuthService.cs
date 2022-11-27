@@ -33,7 +33,9 @@ public class AuthService : IAuthService
     
     public async Task<UsuarioDto?> Registrar(RegistrarUsuarioDto dto)
     {
-        var usuario = _mapper.Map<TbUsuario>(dto);
+       var usuario = _mapper.Map<TbUsuario>(dto);
+       usuario.IdCliente = 1;
+       usuario.LoginUsuario = "aaaa";
        var validacao = await _validator.ValidateAsync(usuario);
 
         if (!validacao.IsValid)

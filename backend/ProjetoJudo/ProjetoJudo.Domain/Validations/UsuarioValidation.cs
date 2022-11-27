@@ -37,6 +37,6 @@ public class UsuarioValidation : AbstractValidator<TbUsuario>
 
     private async Task<bool> EmailEmUso(string email, CancellationToken cancellationToken)
     {
-        return await _tbUsuarioRepository.Any(c => c.Email == email);
+        return !await _tbUsuarioRepository.Any(c => c.Email == email);
     }
 }
