@@ -20,7 +20,6 @@
         public string Situacao { get; set; } = null!;
         public bool Selecao { get; set; }
         public int IdCliente { get; set; }
-
         public virtual TbCliente IdClienteNavigation { get; set; } = null!;
         public virtual ICollection<TbPerfisUsuario> TbPerfisUsuarios { get; set; }
         public virtual ICollection<TbRecibo> TbRecibos { get; set; }

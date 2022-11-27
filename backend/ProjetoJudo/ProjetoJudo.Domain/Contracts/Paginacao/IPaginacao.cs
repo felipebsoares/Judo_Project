@@ -1,6 +1,4 @@
-﻿using System.Runtime;
-
-namespace ProjetoJudo.Domain.Contracts.Paginacao;
+﻿namespace ProjetoJudo.Domain.Contracts.Paginacao;
 
 public interface IPaginacao
 {

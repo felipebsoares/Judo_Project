@@ -8,7 +8,7 @@ using ProjetoJudo.Infra.Extensions;
 
 namespace ProjetoJudo.Infra.Abstractions;
 
-public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
 {
     private bool _isDisposed;
     private readonly DbSet<TEntity> _dbSet;

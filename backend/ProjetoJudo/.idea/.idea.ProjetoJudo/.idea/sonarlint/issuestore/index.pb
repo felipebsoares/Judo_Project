@@ -1,24 +1,12 @@
 
-ä
-ZProjetoJudo.Api/obj/Debug/net6.0/ProjetoJudo.Api.GeneratedMSBuildEditorConfig.editorconfig,c\8\c8383db0f876cf3ea2bdd88d7af524b5d1002840
 r
 BProjetoJudo.Api/obj/Debug/net6.0/ProjetoJudo.Api.GlobalUsings.g.cs,3\6\36506785ba5f1021237cdf2333b4d7a6bb258b18
 p
 @ProjetoJudo.Api/obj/Debug/net6.0/ProjetoJudo.Api.AssemblyInfo.cs,2\7\27ca745bbf0553c4a1e7d17d1cfbb4772a969a8e
-^
-.ProjetoJudo.Api/Properties/launchSettings.json,b\1\b15ab9c610b9b18aeead31c6ea2ffb12b1e871d9
-J
-ProjetoJudo.Api/Program.cs,e\4\e4ed03eba4b9214deebe52bc191d365afe4cfdd1
-V
-&ProjetoJudo.Api/ProjetoJudo.Api.csproj,6\7\67b5b92356099708dd229853d388f5197d442f9d
-ö
-jProjetoJudo.Application/obj/Debug/net6.0/ProjetoJudo.Application.GeneratedMSBuildEditorConfig.editorconfig,2\d\2dbe1ac18dd471a9abb1d4717536f6f60c80fc26
 Ç
 RProjetoJudo.Application/obj/Debug/net6.0/ProjetoJudo.Application.GlobalUsings.g.cs,4\e\4eb459ec385d40b7beaed0ad2f569dbf56f6de71
 Ä
 PProjetoJudo.Application/obj/Debug/net6.0/ProjetoJudo.Application.AssemblyInfo.cs,c\6\c6a80b5bfb798492d61986f097f3d42b757c2ad3
-ê
-`ProjetoJudo.Domain/obj/Debug/net6.0/ProjetoJudo.Domain.GeneratedMSBuildEditorConfig.editorconfig,0\0\001d4688c7562ef5eff9ba02c101fb81a5ca5a73
 x
 HProjetoJudo.Domain/obj/Debug/net6.0/ProjetoJudo.Domain.GlobalUsings.g.cs,3\3\33ce7b00e4846f2ba88e7f046ed3897b39c903a4
 f
@@ -27,16 +15,10 @@ v
 FProjetoJudo.Domain/obj/Debug/net6.0/ProjetoJudo.Domain.AssemblyInfo.cs,5\f\5f3a783cf170367a80d84803c190e2fe78a1cddf
 v
 FProjetoJudo.Infra/obj/Debug/net6.0/ProjetoJudo.Infra.GlobalUsings.g.cs,d\d\ddb69833024af99d37b4e4a8ba030fe6925bc233
-é
-^ProjetoJudo.Infra/obj/Debug/net6.0/ProjetoJudo.Infra.GeneratedMSBuildEditorConfig.editorconfig,8\d\8daacd5c6e62c9f28a317dbfa864f1d84b1b1165
 t
 DProjetoJudo.Infra/obj/Debug/net6.0/ProjetoJudo.Infra.AssemblyInfo.cs,3\7\3740f6b86a1384762eb17efe03a3f80c0a4dae17
 ?
 ProjetoJudo.sln,3\9\39f8e49b0c4c7e6ce4084760a74a4db3aac262cb
-P
- ProjetoJudo.Api/appsettings.json,5\a\5a8e9dda4c705bc079fd37434ad1cfd043b6f336
-\
-,ProjetoJudo.Api/appsettings.Development.json,9\b\9baa9a0f0a7d42f80df0f2d66f6ac0e2dfe8a5f0
 Z
 *ProjetoJudo.Domain/Entities/TbAgremiaco.cs,f\0\f0285ef07cdda1342462ce23701f23869de5481c
 f
@@ -199,3 +181,13 @@ a
 -ProjetoJudo.Domain/Entities/TbTiposOperaco.cs,e\b\eba5534cfa5f3f1aebce0f91b54f24d77a43146f
 h
 8ProjetoJudo.Domain/Entities/TbTiposPagamentosAnuidade.cs,8\c\8c40c9016377565d1bc5bb542e1893b206f369aa
+Y
+)ProjetoJudo.Domain/Paginacao/Paginacao.cs,8\c\8cbe7de4fd5c57fd6b9c3b373a3afc12f0235fb0
+a
+1ProjetoJudo.Domain/Paginacao/ResultadoPaginado.cs,e\8\e828349403b4a3850c0e412d88a18969c9f6db73
+h
+8ProjetoJudo.Domain/Contracts/Repositories/IRepository.cs,8\8\8892002f2627fdf193efc60f6c753ebf7e884021
+c
+3ProjetoJudo.Domain/Validations/UsuarioValidation.cs,2\5\25d5794fd2ec02b4b7e1903f4d0e8f63511d4648
+X
+(ProjetoJudo.Domain/Entities/TbUsuario.cs,8\e\8eb1e6022c01161400f4da42181221bd1e1afccc
