@@ -7,7 +7,7 @@ namespace ProjetoJudo.Infra.Repositories;
 
 public class TbUsuarioRepository : Repository<TbUsuario>, IUsuarioRepository
 {
-    protected TbUsuarioRepository(JudoDesContext context) : base(context)
+    public TbUsuarioRepository(JudoDesContext context) : base(context)
     {
     }
 
