@@ -18,15 +18,15 @@ public class AuthService : IAuthService
 {
     private readonly INotificator _notificator;
     private readonly IValidator<TbUsuario> _validator;
-    private readonly IUsuarioRepository _usuarioRepository;
+    private readonly ITbUsuarioRepository _tbUsuarioRepository;
     private readonly IMapper _mapper;
     private readonly IPasswordHasher<TbUsuario> _passwordHasher;
     
-    public AuthService(IPasswordHasher<TbUsuario> passwordHasher, IMapper mapper, IUsuarioRepository usuarioRepository, INotificator notificator, IValidator<TbUsuario> validator)
+    public AuthService(IPasswordHasher<TbUsuario> passwordHasher, IMapper mapper, ITbUsuarioRepository tbUsuarioRepository, INotificator notificator, IValidator<TbUsuario> validator)
     {
         _passwordHasher = passwordHasher;
         _mapper = mapper;
-        _usuarioRepository = usuarioRepository;
+        _tbUsuarioRepository = tbUsuarioRepository;
         _notificator = notificator;
         _validator = validator;
     }
@@ -45,9 +45,9 @@ public class AuthService : IAuthService
         usuario.Senha = _passwordHasher.HashPassword(usuario, usuario.Senha);
      
         
-        _usuarioRepository.Cadastrar(usuario);
+        _tbUsuarioRepository.Cadastrar(usuario);
         
-       if (!await _usuarioRepository.UnitOfWork.Commit())
+       if (!await _tbUsuarioRepository.UnitOfWork.Commit())
            _notificator.Handle("Falha ao salvar no banco de dados!");
         
         return _mapper.Map<UsuarioDto>(usuario);
@@ -55,7 +55,7 @@ public class AuthService : IAuthService
 
     public async Task<UsuarioAutenticadoDto?> Autenticar(UsuarioAutenticadoDto.LoginUsuarioDto dto)
     {
-        var usuario = await _usuarioRepository.FistOrDefault(c => c.Email == dto.Email); //await _usuarioRepository.ObterPorEmail(dto.Email);
+        var usuario = await _tbUsuarioRepository.FistOrDefault(c => c.Email == dto.Email); //await _usuarioRepository.ObterPorEmail(dto.Email);
         if (usuario == null)
         {
             _notificator.Handle("Usuário ou Senha incorretos!");

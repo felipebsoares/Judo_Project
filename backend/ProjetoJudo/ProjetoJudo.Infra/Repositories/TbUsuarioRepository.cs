@@ -5,7 +5,7 @@ using ProjetoJudo.Infra.Context;
 
 namespace ProjetoJudo.Infra.Repositories;
 
-public class TbUsuarioRepository : Repository<TbUsuario>, IUsuarioRepository
+public class TbUsuarioRepository : Repository<TbUsuario>, ITbUsuarioRepository
 {
     public TbUsuarioRepository(JudoDesContext context) : base(context)
     {

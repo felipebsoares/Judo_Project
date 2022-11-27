@@ -6,10 +6,10 @@ namespace ProjetoJudo.Domain.Validations;
 
 public class UsuarioValidation : AbstractValidator<TbUsuario>
 {
-    private readonly IUsuarioRepository _usuarioRepository;
-    public UsuarioValidation(IUsuarioRepository usuarioRepository)
+    private readonly ITbUsuarioRepository _tbUsuarioRepository;
+    public UsuarioValidation(ITbUsuarioRepository tbUsuarioRepository)
     {
-        _usuarioRepository = usuarioRepository;
+        _tbUsuarioRepository = tbUsuarioRepository;
         //Adicionar mensagens de erro!
         RuleFor(c => c.Nome)
             .NotEmpty()
@@ -37,6 +37,6 @@ public class UsuarioValidation : AbstractValidator<TbUsuario>
 
     private async Task<bool> EmailEmUso(string email, CancellationToken cancellationToken)
     {
-        return await _usuarioRepository.Any(c => c.Email == email);
+        return await _tbUsuarioRepository.Any(c => c.Email == email);
     }
 }

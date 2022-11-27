@@ -1,0 +1,15 @@
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\bin\Debug\net6.0\ProjetoJudo.Application.deps.json
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\bin\Debug\net6.0\ProjetoJudo.Application.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\bin\Debug\net6.0\ProjetoJudo.Application.pdb
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\bin\Debug\net6.0\ProjetoJudo.Domain.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\bin\Debug\net6.0\ProjetoJudo.Domain.pdb
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\ProjetoJudo.Application.csproj.AssemblyReference.cache
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\ProjetoJudo.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\ProjetoJudo.Application.AssemblyInfoInputs.cache
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\ProjetoJudo.Application.AssemblyInfo.cs
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\ProjetoJudo.Application.csproj.CoreCompileInputs.cache
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\ProjetoJudo.Application.csproj.CopyComplete
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\ProjetoJudo.Application.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\refint\ProjetoJudo.Application.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\ProjetoJudo.Application.pdb
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Application\obj\Debug\net6.0\ref\ProjetoJudo.Application.dll

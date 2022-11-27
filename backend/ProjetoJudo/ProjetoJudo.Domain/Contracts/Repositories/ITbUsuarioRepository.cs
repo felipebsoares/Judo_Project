@@ -2,7 +2,7 @@
 
 namespace ProjetoJudo.Domain.Contracts.Repositories;
 
-public interface IUsuarioRepository : IRepository<TbUsuario>
+public interface ITbUsuarioRepository : IRepository<TbUsuario>
 {
     void Cadastrar(TbUsuario usuario);
 }
