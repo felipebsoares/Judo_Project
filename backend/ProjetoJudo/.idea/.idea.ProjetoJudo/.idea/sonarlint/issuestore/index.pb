@@ -187,7 +187,5 @@ a
 1ProjetoJudo.Domain/Paginacao/ResultadoPaginado.cs,e\8\e828349403b4a3850c0e412d88a18969c9f6db73
 h
 8ProjetoJudo.Domain/Contracts/Repositories/IRepository.cs,8\8\8892002f2627fdf193efc60f6c753ebf7e884021
-c
-3ProjetoJudo.Domain/Validations/UsuarioValidation.cs,2\5\25d5794fd2ec02b4b7e1903f4d0e8f63511d4648
 X
 (ProjetoJudo.Domain/Entities/TbUsuario.cs,8\e\8eb1e6022c01161400f4da42181221bd1e1afccc

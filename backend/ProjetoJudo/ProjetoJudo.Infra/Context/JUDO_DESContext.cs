@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using ProjetoJudo.Domain.Contracts;
 using ProjetoJudo.Domain.Entities;
 
@@ -634,195 +635,6 @@ namespace ProjetoJudo.Infra.Context
 
                 entity.HasIndex(e => new { e.IdCliente, e.RegistroFederacao }, "UK_ATLETAS_REGISTRO_FEDERACAO")
                     .IsUnique();
-
-                entity.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");
-
-                entity.Property(e => e.IdAtleta)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ID_ATLETA");
-
-                entity.Property(e => e.Anotacoes)
-                    .HasColumnType("text")
-                    .HasColumnName("ANOTACOES");
-
-                entity.Property(e => e.Bairro)
-                    .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("BAIRRO");
-
-                entity.Property(e => e.Cep)
-                    .HasMaxLength(8)
-                    .IsUnicode(false)
-                    .HasColumnName("CEP");
-
-                entity.Property(e => e.Complemento)
-                    .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("COMPLEMENTO");
-
-                entity.Property(e => e.Cpf)
-                    .HasMaxLength(11)
-                    .IsUnicode(false)
-                    .HasColumnName("CPF");
-
-                entity.Property(e => e.DataFiliacao)
-                    .HasColumnType("date")
-                    .HasColumnName("DATA_FILIACAO");
-
-                entity.Property(e => e.DataIdentidade)
-                    .HasColumnType("date")
-                    .HasColumnName("DATA_IDENTIDADE");
-
-                entity.Property(e => e.DataNascimento)
-                    .HasColumnType("date")
-                    .HasColumnName("DATA_NASCIMENTO");
-
-                entity.Property(e => e.Email)
-                    .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("EMAIL");
-
-                entity.Property(e => e.Endereco)
-                    .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("ENDERECO");
-
-                entity.Property(e => e.IdAgremiacao).HasColumnName("ID_AGREMIACAO");
-
-                entity.Property(e => e.IdCidade).HasColumnName("ID_CIDADE");
-
-                entity.Property(e => e.IdEmissor).HasColumnName("ID_EMISSOR");
-
-                entity.Property(e => e.IdEstado).HasColumnName("ID_ESTADO");
-
-                entity.Property(e => e.IdEstadoCivil).HasColumnName("ID_ESTADO_CIVIL");
-
-                entity.Property(e => e.IdFaixa).HasColumnName("ID_FAIXA");
-
-                entity.Property(e => e.IdNacionalidade).HasColumnName("ID_NACIONALIDADE");
-
-                entity.Property(e => e.IdPais).HasColumnName("ID_PAIS");
-
-                entity.Property(e => e.IdProfissaoAtleta).HasColumnName("ID_PROFISSAO_ATLETA");
-
-                entity.Property(e => e.IdProfissaoMae).HasColumnName("ID_PROFISSAO_MAE");
-
-                entity.Property(e => e.IdProfissaoPai).HasColumnName("ID_PROFISSAO_PAI");
-
-                entity.Property(e => e.IdSexo).HasColumnName("ID_SEXO");
-
-                entity.Property(e => e.Identidade)
-                    .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("IDENTIDADE");
-
-                entity.Property(e => e.Nome)
-                    .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("NOME");
-
-                entity.Property(e => e.NomeMae)
-                    .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("NOME_MAE");
-
-                entity.Property(e => e.NomePai)
-                    .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("NOME_PAI");
-
-                entity.Property(e => e.RegistroConfederacao)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("REGISTRO_CONFEDERACAO");
-
-                entity.Property(e => e.RegistroFederacao)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("REGISTRO_FEDERACAO");
-
-                entity.Property(e => e.Selecao).HasColumnName("SELECAO");
-
-                entity.Property(e => e.Telefone)
-                    .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("TELEFONE");
-
-                entity.HasOne(d => d.IdClienteNavigation)
-                    .WithMany(p => p.TbAtleta)
-                    .HasForeignKey(d => d.IdCliente)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_CLIENTES");
-
-                entity.HasOne(d => d.Id)
-                    .WithMany(p => p.TbAtleta)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdAgremiacao })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_AGREMIACOES");
-
-                entity.HasOne(d => d.IdNavigation)
-                    .WithMany(p => p.TbAtleta)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdEmissor })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_EMISSORES_IDENTIDADES");
-
-                entity.HasOne(d => d.Id1)
-                    .WithMany(p => p.TbAtleta)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdEstadoCivil })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_ESTADOS_CIVIS");
-
-                entity.HasOne(d => d.Id2)
-                    .WithMany(p => p.TbAtleta)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdFaixa })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_FAIXAS");
-
-                entity.HasOne(d => d.Id3)
-                    .WithMany(p => p.TbAtletaId3s)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdNacionalidade })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_PAISES1");
-
-                entity.HasOne(d => d.Id4)
-                    .WithMany(p => p.TbAtletaId4s)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdPais })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_PAISES");
-
-                entity.HasOne(d => d.Id5)
-                    .WithMany(p => p.TbAtletaId5s)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdProfissaoAtleta })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_PROFISSOES1");
-
-                entity.HasOne(d => d.Id6)
-                    .WithMany(p => p.TbAtletaId6s)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdProfissaoMae })
-                    .HasConstraintName("FK_ATLETAS_PROFISSOES3");
-
-                entity.HasOne(d => d.Id7)
-                    .WithMany(p => p.TbAtletaId7s)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdProfissaoPai })
-                    .HasConstraintName("FK_ATLETAS_PROFISSOES2");
-
-                entity.HasOne(d => d.Id8)
-                    .WithMany(p => p.TbAtleta)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdSexo })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_SEXOS");
-
-                entity.HasOne(d => d.Id9)
-                    .WithMany(p => p.TbAtleta)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdPais, d.IdEstado })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_ESTADOS");
-
-                entity.HasOne(d => d.Id10)
-                    .WithMany(p => p.TbAtleta)
-                    .HasForeignKey(d => new { d.IdCliente, d.IdPais, d.IdEstado, d.IdCidade })
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ATLETAS_CIDADES");
             });
 
             modelBuilder.Entity<TbCategoria>(entity =>
@@ -5512,6 +5324,8 @@ namespace ProjetoJudo.Infra.Context
                     .HasForeignKey(d => new { d.IdCliente, d.IdPais, d.IdEstado, d.IdCidade })
                     .HasConstraintName("FK_VALORES_DEFAULT_CIDADES");
             });
+
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             
             OnModelCreatingPartial(modelBuilder);
         }
