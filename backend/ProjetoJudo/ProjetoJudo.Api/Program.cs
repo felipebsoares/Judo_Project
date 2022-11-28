@@ -17,6 +17,7 @@ using ProjetoJudo.Infra.Repositories;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 //Ajustar o configuration
 builder
@@ -26,7 +27,15 @@ builder
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
     .AddEnvironmentVariables();
 
-
+// Add CORs
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy  =>
+        {
+            policy.AllowAnyOrigin();
+        });
+});
 // Add services to the container.
 builder.Services
     .AddScoped<IAuthService, AuthService>()
