@@ -26,6 +26,7 @@ builder
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
     .AddEnvironmentVariables();
 
+
 // Add services to the container.
 builder.Services
     .AddScoped<IAuthService, AuthService>()
@@ -110,6 +111,8 @@ if (!app.Environment.IsProduction())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMigrations(app.Services);
 
 app.UseHttpsRedirection();
 

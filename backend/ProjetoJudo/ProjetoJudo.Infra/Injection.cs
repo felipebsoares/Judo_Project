@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjetoJudo.Infra.Context;
@@ -15,5 +16,13 @@ public static class Injection
             optionsAction.EnableDetailedErrors();
             optionsAction.EnableSensitiveDataLogging();
         });
+        
+      
+    }
+    public static void UseMigrations(this IApplicationBuilder app, IServiceProvider services)
+    {
+        using var scope = services.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<JudoDesContext>();
+        db.Database.Migrate();
     }
 }

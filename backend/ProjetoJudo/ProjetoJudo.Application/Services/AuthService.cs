@@ -44,7 +44,6 @@ public class AuthService : IAuthService
        }
 
         usuario.Senha = _passwordHasher.HashPassword(usuario, usuario.Senha);
-     
         
         _tbUsuarioRepository.Cadastrar(usuario);
         
