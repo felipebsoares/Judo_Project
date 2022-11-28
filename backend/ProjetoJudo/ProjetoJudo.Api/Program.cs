@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ProjetoJudo.Application.Configuration;
 using ProjetoJudo.Application.Configuration.Key;
+using ProjetoJudo.Application.Contracts;
 using ProjetoJudo.Application.Contracts.Services;
 using ProjetoJudo.Application.Notification;
 using ProjetoJudo.Application.Services;
@@ -19,6 +20,9 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 //Ajustar o configuration
+
+#region AjusteConfiguration
+
 builder
     .Configuration
     .SetBasePath(builder.Environment.ContentRootPath)
@@ -26,14 +30,25 @@ builder
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
     .AddEnvironmentVariables();
 
-// Add services to the container.
+#endregion
+
+#region InjecaoDeDependencia
+
 builder.Services
     .AddScoped<IAuthService, AuthService>()
     .AddScoped<INotificator, Notificator>()
-    .AddScoped<ITbUsuarioRepository, TbUsuarioRepository>();
+    .AddScoped<IPasswordHasher<TbUsuario>, PasswordHasher<TbUsuario>>();
+
 builder.Services
     .AddScoped<IValidator<TbUsuario>, UsuarioValidation>()
-    .AddScoped<IPasswordHasher<TbUsuario>, PasswordHasher<TbUsuario>>();
+    .AddScoped<ITbUsuarioRepository, TbUsuarioRepository>();
+
+builder.Services
+    .AddScoped<IValidator<TbAtleta>, AtletaValidation>()
+    .AddScoped<IAtletaService, AtletaService>()
+    .AddScoped<IAtletaRepository, TbAtletaRepository>();
+
+#endregion
 
 //Db
 builder.Services.ConfigureDataBase(builder.Configuration);
@@ -112,6 +127,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

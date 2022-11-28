@@ -19,12 +19,13 @@ public class TbAtletaRepository : Repository<TbAtleta>, IAtletaRepository
 
     public void Update(TbAtleta tbAtleta)
     {
-        Context.TbAtletas.Update(tbAtleta);
+        Context.Entry(tbAtleta).State = EntityState.Modified;
+        Context.SaveChangesAsync();
     }
 
     public async Task<TbAtleta?> ObterPorId(int id)
     {
-        return await FistOrDefault(at => at.IdAtleta == id);
+        return await FistOrDefault(at => at.Id == id);
     }
 
     public async Task<List<TbAtleta>?> ObterTodos()

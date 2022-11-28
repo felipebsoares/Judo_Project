@@ -621,7 +621,7 @@ namespace ProjetoJudo.Infra.Context
 
             modelBuilder.Entity<TbAtleta>(entity =>
             {
-                entity.HasKey(e => new { e.IdCliente, e.IdAtleta })
+                entity.HasKey(e => new { e.IdCliente, e.Id })
                     .HasName("PK_ATLETAS")
                     .IsClustered(false);
 

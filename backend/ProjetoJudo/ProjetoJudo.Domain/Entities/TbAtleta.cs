@@ -1,6 +1,9 @@
-﻿namespace ProjetoJudo.Domain.Entities
+﻿using FluentValidation.Results;
+using ProjetoJudo.Domain.Validations;
+
+namespace ProjetoJudo.Domain.Entities
 {
-    public partial class TbAtleta
+    public partial class TbAtleta : Base
     {
         public TbAtleta()
         {
@@ -24,8 +27,7 @@
             TbTransferencia = new HashSet<TbTransferencia>();
             TbValoresDefaults = new HashSet<TbValoresDefault>();
         }
-
-        public int IdAtleta { get; set; }
+        
         public string RegistroFederacao { get; set; } = null!;
         public string? RegistroConfederacao { get; set; }
         public string Nome { get; set; } = null!;
@@ -58,17 +60,17 @@
         public bool Selecao { get; set; }
         public int IdCliente { get; set; }
 
-        public virtual TbAgremiaco Id { get; set; } = null!;
-        public virtual TbEstadosCivi Id1 { get; set; } = null!;
-        public virtual TbCidade Id10 { get; set; } = null!;
-        public virtual TbFaixa Id2 { get; set; } = null!;
-        public virtual TbPaise Id3 { get; set; } = null!;
-        public virtual TbPaise Id4 { get; set; } = null!;
-        public virtual TbProfisso Id5 { get; set; } = null!;
-        public virtual TbProfisso? Id6 { get; set; }
-        public virtual TbProfisso? Id7 { get; set; }
-        public virtual TbSexo Id8 { get; set; } = null!;
-        public virtual TbEstado Id9 { get; set; } = null!;
+        public virtual TbAgremiaco Agremiaco { get; set; } = null!;
+        public virtual TbEstadosCivi EstadoCivil { get; set; } = null!;
+        public virtual TbCidade Cidade { get; set; } = null!;
+        public virtual TbFaixa Faixa { get; set; } = null!;
+        public virtual TbPaise Pais { get; set; } = null!;
+        public virtual TbPaise Paise { get; set; } = null!;
+        public virtual TbProfisso Profissao { get; set; } = null!;
+        public virtual TbProfisso? ProfisaoPai { get; set; }
+        public virtual TbProfisso? ProfisaoMae { get; set; }
+        public virtual TbSexo Sexo { get; set; } = null!;
+        public virtual TbEstado Estado { get; set; } = null!;
         public virtual TbCliente IdClienteNavigation { get; set; } = null!;
         public virtual TbEmissoresIdentidade IdNavigation { get; set; } = null!;
         public virtual ICollection<TbAnuidade> TbAnuidades { get; set; }
@@ -90,5 +92,11 @@
         public virtual ICollection<TbRecibo> TbRecibos { get; set; }
         public virtual ICollection<TbTransferencia> TbTransferencia { get; set; }
         public virtual ICollection<TbValoresDefault> TbValoresDefaults { get; set; }
+        
+        public override bool Validar(out ValidationResult validationResult)
+        {
+            validationResult = new AtletaValidation().Validate(this);
+            return validationResult.IsValid;
+        }
     }
 }

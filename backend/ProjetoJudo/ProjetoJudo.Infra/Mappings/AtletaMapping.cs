@@ -8,7 +8,7 @@ public class AtletaMapping : IEntityTypeConfiguration<TbAtleta>
 {
     public void Configure(EntityTypeBuilder<TbAtleta> builder)
     {
-        builder.Property(e => e.IdAtleta)
+        builder.Property(e => e.Id)
             .ValueGeneratedOnAdd()
             .IsRequired()
             .HasColumnName("ID_ATLETA");
@@ -156,7 +156,7 @@ public class AtletaMapping : IEntityTypeConfiguration<TbAtleta>
         builder.Property(e => e.Selecao)
             .IsRequired()
             .HasDefaultValue(false)
-            .HasColumnName("ELECAO");
+            .HasColumnName("SELECAO");
         
         builder.Property(e => e.IdCliente)
             .IsRequired()
@@ -168,7 +168,7 @@ public class AtletaMapping : IEntityTypeConfiguration<TbAtleta>
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ATLETAS_CLIENTES");
 
-        builder.HasOne(d => d.Id)
+        builder.HasOne(d => d.Agremiaco)
             .WithMany(p => p.TbAtleta)
             .HasForeignKey(d => new { d.IdCliente, d.IdAgremiacao })
             .OnDelete(DeleteBehavior.ClientSetNull)
@@ -180,59 +180,59 @@ public class AtletaMapping : IEntityTypeConfiguration<TbAtleta>
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ATLETAS_EMISSORES_IDENTIDADES");
 
-        builder.HasOne(d => d.Id1)
+        builder.HasOne(d => d.EstadoCivil)
             .WithMany(p => p.TbAtleta)
             .HasForeignKey(d => new { d.IdCliente, d.IdEstadoCivil })
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ATLETAS_ESTADOS_CIVIS");
 
-        builder.HasOne(d => d.Id2)
+        builder.HasOne(d => d.Faixa)
             .WithMany(p => p.TbAtleta)
             .HasForeignKey(d => new { d.IdCliente, d.IdFaixa })
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ATLETAS_FAIXAS");
 
-        builder.HasOne(d => d.Id3)
+        builder.HasOne(d => d.Pais)
             .WithMany(p => p.TbAtletaId3s)
             .HasForeignKey(d => new { d.IdCliente, d.IdNacionalidade })
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ATLETAS_PAISES1");
 
-        builder.HasOne(d => d.Id4)
+        builder.HasOne(d => d.Paise)
             .WithMany(p => p.TbAtletaId4s)
             .HasForeignKey(d => new { d.IdCliente, d.IdPais })
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ATLETAS_PAISES");
 
-        builder.HasOne(d => d.Id5)
+        builder.HasOne(d => d.Profissao)
             .WithMany(p => p.TbAtletaId5s)
             .HasForeignKey(d => new { d.IdCliente, d.IdProfissaoAtleta })
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ATLETAS_PROFISSOES1");
 
-        builder.HasOne(d => d.Id6)
+        builder.HasOne(d => d.ProfisaoPai)
             .WithMany(p => p.TbAtletaId6s)
             .HasForeignKey(d => new { d.IdCliente, d.IdProfissaoMae })
             .HasConstraintName("FK_ATLETAS_PROFISSOES3");
 
-        builder.HasOne(d => d.Id7)
+        builder.HasOne(d => d.ProfisaoMae)
             .WithMany(p => p.TbAtletaId7s)
             .HasForeignKey(d => new { d.IdCliente, d.IdProfissaoPai })
             .HasConstraintName("FK_ATLETAS_PROFISSOES2");
 
-        builder.HasOne(d => d.Id8)
+        builder.HasOne(d => d.Sexo)
             .WithMany(p => p.TbAtleta)
             .HasForeignKey(d => new { d.IdCliente, d.IdSexo })
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ATLETAS_SEXOS");
 
-        builder.HasOne(d => d.Id9)
+        builder.HasOne(d => d.Estado)
             .WithMany(p => p.TbAtleta)
             .HasForeignKey(d => new { d.IdCliente, d.IdPais, d.IdEstado })
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ATLETAS_ESTADOS");
 
-        builder.HasOne(d => d.Id10)
+        builder.HasOne(d => d.Cidade)
             .WithMany(p => p.TbAtleta)
             .HasForeignKey(d => new { d.IdCliente, d.IdPais, d.IdEstado, d.IdCidade })
             .OnDelete(DeleteBehavior.ClientSetNull)
