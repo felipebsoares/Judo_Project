@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoJudo.Infra.Context;
 
@@ -11,9 +12,10 @@ using ProjetoJudo.Infra.Context;
 namespace ProjetoJudo.Infra.Migrations
 {
     [DbContext(typeof(JudoDesContext))]
-    partial class JudoDesContextModelSnapshot : ModelSnapshot
+    [Migration("20221128020230_ChangingSenha")]
+    partial class ChangingSenha
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

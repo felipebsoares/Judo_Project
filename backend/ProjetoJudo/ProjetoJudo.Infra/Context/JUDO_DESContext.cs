@@ -5063,7 +5063,7 @@ namespace ProjetoJudo.Infra.Context
                 entity.Property(e => e.Selecao).HasColumnName("SELECAO");
 
                 entity.Property(e => e.Senha)
-                    .HasMaxLength(255)
+                    .HasMaxLength(254)
                     .IsUnicode(false)
                     .HasColumnName("SENHA");
 

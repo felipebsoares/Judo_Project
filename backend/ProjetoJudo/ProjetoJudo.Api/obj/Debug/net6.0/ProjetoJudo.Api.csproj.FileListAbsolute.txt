@@ -165,3 +165,17 @@ C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJud
 C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 C:\Users\natan\OneDrive\Desktop\Free\ProjetoJudo\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\appsettings.Staging.json
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Systemd.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\felip\OneDrive\Documentos\PetFinderAPI\Judo_Project\backend\ProjetoJudo\ProjetoJudo.Api\bin\Debug\net6.0\Serilog.Sinks.File.dll
