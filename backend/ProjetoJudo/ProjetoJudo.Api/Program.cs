@@ -123,6 +123,7 @@ if (!app.Environment.IsProduction())
     app.UseSwaggerUI();
 }
 
+app.UseCors(MyAllowSpecificOrigins);
 app.UseMigrations(app.Services);
 
 app.UseHttpsRedirection();
