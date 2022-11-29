@@ -8,6 +8,9 @@ public class FaixaMapping : IEntityTypeConfiguration<TbFaixa>
 {
     public void Configure(EntityTypeBuilder<TbFaixa> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdFaixa })
+            .HasName("PK_FAIXAS")
+            .IsClustered(false);
         builder.ToTable("TB_FAIXAS");
 
         builder.HasIndex(e => new { e.IdCliente, e.OrdemExibicao }, "UK_FAIXAS_ORDENS_EXIBICAO")

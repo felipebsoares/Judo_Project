@@ -8,6 +8,17 @@ public class AgremiacoesMapping : IEntityTypeConfiguration<TbAgremiaco>
 {
     public void Configure(EntityTypeBuilder<TbAgremiaco> builder)
     {
+        // .Entity<TbAgremiaco>(entity =>
+        // {
+        //     entity.HasKey(e => new { e.IdCliente, e.IdAgremiacao })
+        //         .HasName("PK_AGREMIACOES")
+        //         .IsClustered(false);
+        // });
+        
+        builder.HasKey(e => new { e.IdCliente, e.IdAgremiacao })
+            .HasName("PK_AGREMIACOES")
+            .IsClustered(false);
+        
         builder.ToTable("TB_AGREMIACOES");
 
                 builder.HasIndex(e => new { e.IdCliente, e.Cnpj }, "UK_AGREMIACOES_CNPJ")

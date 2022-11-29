@@ -8,6 +8,9 @@ public class TipoDesfiliacaoAtletaMapping : IEntityTypeConfiguration<TbTiposDesf
 {
     public void Configure(EntityTypeBuilder<TbTiposDesfiliacoesAtleta> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTipoDesfiliacaoAtleta })
+            .HasName("PK_TIPOS_DESFILIACOES_ATLETAS")
+            .IsClustered(false);
         builder.ToTable("TB_TIPOS_DESFILIACOES_ATLETAS");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TIPOS_DESFILIACOES_ATLETAS_SIGLAS")

@@ -8,6 +8,9 @@ public class TipoOperacaoMapping : IEntityTypeConfiguration<TbTiposOperaco>
 {
     public void Configure(EntityTypeBuilder<TbTiposOperaco> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTipoOperacao })
+            .HasName("PK_TIPOS_OPERACOES")
+            .IsClustered(false);
         builder.ToTable("TB_TIPOS_OPERACOES");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TIPOS_OPERACOES_SIGLAS")

@@ -8,6 +8,9 @@ public class PontuacoesMapping : IEntityTypeConfiguration<TbPontuaco>
 {
     public void Configure(EntityTypeBuilder<TbPontuaco> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdPontuacao })
+            .HasName("PK_PONTUACOES")
+            .IsClustered(false);
         builder.ToTable("TB_PONTUACOES");
 
         builder.HasIndex(e => new { e.IdCliente, e.OrdemExibicao }, "UK_PONTUACOES_ORDENS_EXIBICAO")

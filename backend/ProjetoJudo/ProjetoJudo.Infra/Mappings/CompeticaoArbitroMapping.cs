@@ -8,6 +8,9 @@ public class CompeticaoArbitroMapping : IEntityTypeConfiguration<TbCompeticoesAr
 {
     public void Configure(EntityTypeBuilder<TbCompeticoesArbitro> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdCompeticao, e.IdArbitro })
+            .HasName("PK_COMPETICOES_ARBITROS")
+            .IsClustered(false);
         builder.ToTable("TB_COMPETICOES_ARBITROS");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

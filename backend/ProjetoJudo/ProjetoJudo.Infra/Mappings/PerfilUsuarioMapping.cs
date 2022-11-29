@@ -8,6 +8,9 @@ public class PerfilUsuarioMapping : IEntityTypeConfiguration<TbPerfisUsuario>
 {
     public void Configure(EntityTypeBuilder<TbPerfisUsuario> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdPerfil, e.IdUsuario })
+            .HasName("PK_PERFIS_USUARIOS")
+            .IsClustered(false);
         builder.ToTable("TB_PERFIS_USUARIOS");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

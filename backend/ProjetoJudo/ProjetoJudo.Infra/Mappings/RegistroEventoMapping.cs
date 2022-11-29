@@ -8,6 +8,9 @@ public class RegistroEventoMapping : IEntityTypeConfiguration<TbRegistroEvento>
 {
     public void Configure(EntityTypeBuilder<TbRegistroEvento> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdEvento })
+            .HasName("PK_REGISTRO_EVENTOS")
+            .IsClustered(false);
         builder.ToTable("TB_REGISTRO_EVENTOS");
 
                 builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

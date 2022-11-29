@@ -8,6 +8,9 @@ public class PermissoesMapping : IEntityTypeConfiguration<TbPermisso>
 {
     public void Configure(EntityTypeBuilder<TbPermisso> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdPerfil, e.IdFuncaoMenu, e.IdTipoOperacao })
+            .HasName("PK_PERMISSOES")
+            .IsClustered(false);
         builder.ToTable("TB_PERMISSOES");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

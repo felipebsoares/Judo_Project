@@ -8,6 +8,9 @@ public class CurriculoAtletaMapping : IEntityTypeConfiguration<TbCurriculosAtlet
 {
     public void Configure(EntityTypeBuilder<TbCurriculosAtleta> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdAtleta, e.DataEvento })
+            .HasName("PK_CURRICULOS_ATLETAS")
+            .IsClustered(false);
         builder.ToTable("TB_CURRICULOS_ATLETAS");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

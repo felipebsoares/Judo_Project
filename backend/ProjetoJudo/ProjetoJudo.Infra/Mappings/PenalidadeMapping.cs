@@ -8,6 +8,9 @@ public class PenalidadeMapping : IEntityTypeConfiguration<TbPenalidade>
 {
     public void Configure(EntityTypeBuilder<TbPenalidade> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdPenalidade })
+            .HasName("PK_PENALIDADES")
+            .IsClustered(false);
         builder.ToTable("TB_PENALIDADES");
 
         builder.HasIndex(e => new { e.IdCliente, e.OrdemExibicao }, "UK_PENALIDADES_ORDENS_EXIBICAO")

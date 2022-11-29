@@ -8,6 +8,9 @@ public class EmissoresIdentidadeMapping : IEntityTypeConfiguration<TbEmissoresId
 {
     public void Configure(EntityTypeBuilder<TbEmissoresIdentidade> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdEmissor })
+            .HasName("PK_EMISSORES_IDENTIDADES")
+            .IsClustered(false);
         builder.ToTable("TB_EMISSORES_IDENTIDADES");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_EMISSORES_IDENTIDADES_SIGLAS")

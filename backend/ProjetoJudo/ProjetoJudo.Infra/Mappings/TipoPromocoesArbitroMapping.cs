@@ -8,6 +8,10 @@ public class TipoPromocoesArbitroMapping : IEntityTypeConfiguration<TbTiposPromo
 {
     public void Configure(EntityTypeBuilder<TbTiposPromocoesArbitro> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTipoPromocao })
+            .HasName("PK_TIPOS_PROMOCOES_ARBITROS")
+            .IsClustered(false);
+        
         builder.ToTable("TB_TIPOS_PROMOCOES_ARBITROS");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TIPOS_PROMOCOES_ARBITROS_SIGLAS")

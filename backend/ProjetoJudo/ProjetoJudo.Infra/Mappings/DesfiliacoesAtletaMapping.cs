@@ -6,8 +6,12 @@ namespace ProjetoJudo.Infra.Mappings;
 
 public class DesfiliacoesAtletaMapping : IEntityTypeConfiguration<TbDesfiliacoesAtleta>
 {
+    
     public void Configure(EntityTypeBuilder<TbDesfiliacoesAtleta> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdAtleta, e.DataDesfiliacao })
+            .HasName("PK_DESFILIACOES_ATLETAS")
+            .IsClustered(false);
         builder.ToTable("TB_DESFILIACOES_ATLETAS");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

@@ -8,6 +8,9 @@ public class CidadesMapping : IEntityTypeConfiguration<TbCidade>
 {
     public void Configure(EntityTypeBuilder<TbCidade> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdPais, e.IdEstado, e.IdCidade })
+            .HasName("PK_CIDADES")
+            .IsClustered(false);
         builder.ToTable("TB_CIDADES");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

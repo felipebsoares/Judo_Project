@@ -8,6 +8,9 @@ public class FormasPagamentoMapping : IEntityTypeConfiguration<TbFormasPagamento
 {
     public void Configure(EntityTypeBuilder<TbFormasPagamento> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdFormaPagamento })
+            .HasName("PK_FORMAS_PAGAMENTOS")
+            .IsClustered(false);
         builder.ToTable("TB_FORMAS_PAGAMENTOS");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_FORMAS_PAGAMENTOS_SIGLAS")

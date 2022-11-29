@@ -8,6 +8,9 @@ public class CompeticoesChaveMapping : IEntityTypeConfiguration<TbCompeticoesCha
 {
     public void Configure(EntityTypeBuilder<TbCompeticoesChafe> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdCompeticao, e.IdChave })
+            .HasName("PK_COMPETICOES_CHAVES")
+            .IsClustered(false);
         builder.ToTable("TB_COMPETICOES_CHAVES");
 
                 builder.HasIndex(e => new { e.IdCliente, e.IdCompeticao, e.OrdemExibicaoChave }, "UK_COMPETICOES_CHAVES_ORDENS_EXIBICAO_CHAVES")

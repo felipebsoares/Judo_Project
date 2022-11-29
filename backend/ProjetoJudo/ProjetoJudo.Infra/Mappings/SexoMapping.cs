@@ -8,6 +8,9 @@ public class SexoMapping : IEntityTypeConfiguration<TbSexo>
 {
     public void Configure(EntityTypeBuilder<TbSexo> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdSexo })
+            .HasName("PK_SEXOS")
+            .IsClustered(false);
         builder.ToTable("TB_SEXOS");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

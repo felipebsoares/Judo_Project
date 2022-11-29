@@ -8,6 +8,9 @@ public class UsuarioMapping : IEntityTypeConfiguration<TbUsuario>
 {
     public void Configure(EntityTypeBuilder<TbUsuario> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdUsuario })
+            .HasName("PK_USUARIOS")
+            .IsClustered(false);
         builder.ToTable("TB_USUARIOS");
 
                 builder.HasIndex(e => new { e.IdCliente, e.LoginUsuario }, "UK_USUARIOS_LOGIN_USUARIO")

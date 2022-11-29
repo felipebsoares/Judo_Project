@@ -8,6 +8,9 @@ public class CompeticoesPenalidadesMapping : IEntityTypeConfiguration<TbCompetic
 {
     public void Configure(EntityTypeBuilder<TbCompeticoesPenalidade> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdCompeticao, e.IdPenalidade })
+            .HasName("PK_COMPETICOES_PENALIDADES")
+            .IsClustered(false);
         builder.ToTable("TB_COMPETICOES_PENALIDADES");
 
         builder.HasIndex(e => new { e.IdCliente, e.IdCompeticao, e.OrdemExibicao }, "UK_COMPETICOES_PENALIDADES_ORDENS_EXIBICAO")

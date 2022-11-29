@@ -8,6 +8,9 @@ public class SistemaTipoMensagemMapping : IEntityTypeConfiguration<TbSistemasTip
 {
     public void Configure(EntityTypeBuilder<TbSistemasTiposMensagen> builder)
     {
+        builder.HasKey(e => new { e.IdSistema, e.IdTipoMensagem })
+            .HasName("PK_SISTEMAS_TIPOS_MENSAGENS")
+            .IsClustered(false);
         builder.ToTable("TB_SISTEMAS_TIPOS_MENSAGENS");
 
         builder.HasIndex(e => new { e.IdSistema, e.Sigla }, "UK_SISTEMAS_TIPOS_MENSAGENS_SIGLAS")

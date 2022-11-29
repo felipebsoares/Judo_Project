@@ -8,6 +8,9 @@ public class TipoCurriculoAtletaMapping : IEntityTypeConfiguration<TbTiposCurric
 {
     public void Configure(EntityTypeBuilder<TbTiposCurriculosAtleta> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTipoCurriculoAtleta })
+            .HasName("PK_TIPOS_CURRICULOS_ATLETAS")
+            .IsClustered(false);
         builder.ToTable("TB_TIPOS_CURRICULOS_ATLETAS");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TIPOS_CURRICULOS_ATLETAS_SIGLAS")

@@ -8,6 +8,9 @@ public class ReciboItensMapping : IEntityTypeConfiguration<TbRecibosIten>
 {
     public void Configure(EntityTypeBuilder<TbRecibosIten> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdRecibo, e.IdItemRecibo })
+            .HasName("PK_RECIBOS_ITENS")
+            .IsClustered(false);
         builder.ToTable("TB_RECIBOS_ITENS");
 
                 builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

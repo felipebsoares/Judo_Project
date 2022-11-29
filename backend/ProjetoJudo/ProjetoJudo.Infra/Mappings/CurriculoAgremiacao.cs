@@ -8,6 +8,9 @@ public class CurriculoAgremiacao : IEntityTypeConfiguration<TbCurriculosAgremiac
 {
     public void Configure(EntityTypeBuilder<TbCurriculosAgremiaco> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdAgremiacao, e.DataEvento })
+            .HasName("PK_CURRICULOS_AGREMIACOES")
+            .IsClustered(false);
         builder.ToTable("TB_CURRICULOS_AGREMIACOES");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

@@ -8,6 +8,9 @@ public class PessoalApoioMapping : IEntityTypeConfiguration<TbPessoalApoio>
 {
     public void Configure(EntityTypeBuilder<TbPessoalApoio> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdApoio })
+            .HasName("PK_PESSOAL_APOIO")
+            .IsClustered(false);
         builder.ToTable("TB_PESSOAL_APOIO");
 
                 builder.HasIndex(e => new { e.IdCliente, e.Apelido }, "UK_PESSOAL_APOIO_APELIDOS")

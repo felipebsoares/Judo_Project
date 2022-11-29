@@ -8,6 +8,9 @@ public class CompeticoesTabelasPesoMapping : IEntityTypeConfiguration<TbCompetic
 {
     public void Configure(EntityTypeBuilder<TbCompeticoesTabelasPeso> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdCompeticao, e.IdClasse, e.IdCategoria })
+            .HasName("PK_COMPETICOES_TABELAS_PESOS")
+            .IsClustered(false);
         builder.ToTable("TB_COMPETICOES_TABELAS_PESOS");
 
                 builder.HasIndex(e => new { e.IdCliente, e.IdCompeticao, e.OrdemExibicaoCategoria }, "UK_COMPETICOES_TABELAS_PESOS_ORDENS_EXIBICAO_CATEGORIAS")

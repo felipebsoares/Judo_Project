@@ -8,6 +8,9 @@ public class CompeticaoAreasMapping : IEntityTypeConfiguration<TbCompeticoesArea
 {
     public void Configure(EntityTypeBuilder<TbCompeticoesArea> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdCompeticao, e.IdArea })
+            .HasName("PK_COMPETICOES_AREAS")
+            .IsClustered(false);
         builder.ToTable("TB_COMPETICOES_AREAS");
 
         builder.HasIndex(e => new { e.IdCliente, e.IdCompeticao, e.Sigla }, "UK_COMPETICOES_AREAS_SIGLAS")

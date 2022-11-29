@@ -8,6 +8,9 @@ public class PerfilMapping : IEntityTypeConfiguration<TbPerfi>
 {
     public void Configure(EntityTypeBuilder<TbPerfi> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdPerfil })
+            .HasName("PK_PERFIS")
+            .IsClustered(false);
         builder.ToTable("TB_PERFIS");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_PERFIS_SIGLAS")

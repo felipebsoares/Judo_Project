@@ -8,6 +8,9 @@ public class CobrancaMapping : IEntityTypeConfiguration<TbCobranca>
 {
     public void Configure(EntityTypeBuilder<TbCobranca> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdCobranca })
+            .HasName("PK_COBRANCAS")
+            .IsClustered(false);
         builder.ToTable("TB_COBRANCAS");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

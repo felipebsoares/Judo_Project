@@ -8,6 +8,9 @@ public class PromocoesArbitroMapping : IEntityTypeConfiguration<TbPromocoesArbit
 {
     public void Configure(EntityTypeBuilder<TbPromocoesArbitro> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdArbitro, e.DataPromocao })
+            .HasName("PK_PROMOCOES_ARBITROS")
+            .IsClustered(false);
         builder.ToTable("TB_PROMOCOES_ARBITROS");
 
                 builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

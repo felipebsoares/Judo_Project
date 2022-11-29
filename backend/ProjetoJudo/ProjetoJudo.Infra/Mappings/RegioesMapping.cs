@@ -8,6 +8,9 @@ public class RegioesMapping : IEntityTypeConfiguration<TbRegio>
 {
     public void Configure(EntityTypeBuilder<TbRegio> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdRegiao })
+            .HasName("PK_REGIOES")
+            .IsClustered(false);
         builder.ToTable("TB_REGIOES");
 
                 builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_REGIOES_SIGLAS")

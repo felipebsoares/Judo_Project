@@ -8,6 +8,9 @@ public class DefaultValuesMapping : IEntityTypeConfiguration<TbValoresDefault>
 {
     public void Configure(EntityTypeBuilder<TbValoresDefault> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdDefault })
+            .HasName("PK_VALORES_DEFAULT")
+            .IsClustered(false);
         builder.ToTable("TB_VALORES_DEFAULT");
 
                 builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

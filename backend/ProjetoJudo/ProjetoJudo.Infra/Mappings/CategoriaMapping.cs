@@ -8,6 +8,9 @@ public class CategoriaMapping : IEntityTypeConfiguration<TbCategoria>
 {
     public void Configure(EntityTypeBuilder<TbCategoria> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdCategoria })
+            .HasName("PK_CATEGORIAS")
+            .IsClustered(false);
         builder.ToTable("TB_CATEGORIAS");
 
         builder.HasIndex(e => new { e.IdCliente, e.OrdemExibicao }, "UK_CATEGORIAS_ORDENS_EXIBICAO")

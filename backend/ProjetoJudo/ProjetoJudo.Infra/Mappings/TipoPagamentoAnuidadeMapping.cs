@@ -8,6 +8,9 @@ public class TipoPagamentoAnuidadeMapping : IEntityTypeConfiguration<TbTiposPaga
 {
     public void Configure(EntityTypeBuilder<TbTiposPagamentosAnuidade> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTipoPagamento })
+            .HasName("PK_TIPOS_PAGAMENTOS_ANUIDADES_CONFEDERACAO")
+            .IsClustered(false);
         builder.ToTable("TB_TIPOS_PAGAMENTOS_ANUIDADES");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TIPOS_PAGAMENTOS_ANUIDADES_SIGLAS")
