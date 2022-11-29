@@ -8,6 +8,9 @@ public class ArbitroMapping : IEntityTypeConfiguration<TbArbitro>
 {
     public void Configure(EntityTypeBuilder<TbArbitro> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdArbitro })
+            .HasName("PK_ARBITROS")
+            .IsClustered(false);
         builder.ToTable("TB_ARBITROS");
 
                 builder.HasIndex(e => new { e.IdCliente, e.Apelido }, "UK_ARBITROS_APELIDOS")

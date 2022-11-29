@@ -7,8 +7,10 @@ using Microsoft.OpenApi.Models;
 using ProjetoJudo.Application.Configuration;
 using ProjetoJudo.Application.Configuration.Key;
 using ProjetoJudo.Application.Contracts.Services;
+using ProjetoJudo.Application.DTOs.Agremiacoes;
 using ProjetoJudo.Application.Notification;
 using ProjetoJudo.Application.Services;
+using ProjetoJudo.Application.temp;
 using ProjetoJudo.Domain.Contracts.Repositories;
 using ProjetoJudo.Domain.Entities;
 using ProjetoJudo.Domain.Validations;
@@ -42,9 +44,11 @@ builder.Services.AddCors(options =>
 builder.Services
     .AddScoped<IAuthService, AuthService>()
     .AddScoped<INotificator, Notificator>()
-    .AddScoped<ITbUsuarioRepository, TbUsuarioRepository>();
+    .AddScoped<ITbUsuarioRepository, TbUsuarioRepository>()
+    .AddScoped<IAgremiacaoService, AgremiacaoService>();
 builder.Services
     .AddScoped<IValidator<TbUsuario>, UsuarioValidation>()
+    .AddScoped<IValidator<CadastrarAgremiacaoDto>, CadastrarAgremiacaoValidation>()
     .AddScoped<IPasswordHasher<TbUsuario>, PasswordHasher<TbUsuario>>();
 
 //Db

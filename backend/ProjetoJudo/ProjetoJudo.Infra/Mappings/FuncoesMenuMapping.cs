@@ -8,6 +8,9 @@ public class FuncoesMenuMapping : IEntityTypeConfiguration<TbFuncoesMenu>
 {
     public void Configure(EntityTypeBuilder<TbFuncoesMenu> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdFuncaoMenu })
+            .HasName("PK_FUNCOES_MENU")
+            .IsClustered(false);
         builder.ToTable("TB_FUNCOES_MENU");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_FUNCOES_MENU_SIGLAS")

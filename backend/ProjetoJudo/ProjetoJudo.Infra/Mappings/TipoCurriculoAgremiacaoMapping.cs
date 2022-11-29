@@ -8,6 +8,9 @@ public class TipoCurriculoAgremiacaoMapping : IEntityTypeConfiguration<TbTiposCu
 {
     public void Configure(EntityTypeBuilder<TbTiposCurriculosAgremiaco> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTipoCurriculoAgremiacao })
+            .HasName("PK_TIPOS_CURRICULOS_AGREMIACOES")
+            .IsClustered(false);
         builder.ToTable("TB_TIPOS_CURRICULOS_AGREMIACOES");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TIPOS_CURRICULOS_AGREMIACOES_SIGLAS")

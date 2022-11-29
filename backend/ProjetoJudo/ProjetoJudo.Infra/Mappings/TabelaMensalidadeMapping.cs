@@ -8,6 +8,9 @@ public class TabelaMensalidadeMapping : IEntityTypeConfiguration<TbTabelasMensal
 {
     public void Configure(EntityTypeBuilder<TbTabelasMensalidade> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTabela })
+            .HasName("PK_TABELAS_MENSALIDADES")
+            .IsClustered(false);
         builder.ToTable("TB_TABELAS_MENSALIDADES");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

@@ -8,6 +8,9 @@ public class NiveisArbitrosMapping : IEntityTypeConfiguration<TbNiveisArbitro>
 {
     public void Configure(EntityTypeBuilder<TbNiveisArbitro> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdNivelArbitro })
+            .HasName("PK_NIVEIS_ARBITROS")
+            .IsClustered(false);
         builder.ToTable("TB_NIVEIS_ARBITROS");
 
         builder.HasIndex(e => new { e.IdCliente, e.OrdemExibicao }, "UK_NIVEIS_ARBITROS_ORDENS_EXIBICAO")

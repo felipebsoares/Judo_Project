@@ -8,6 +8,9 @@ public class LocaisCompeticoesMapping : IEntityTypeConfiguration<TbLocaisCompeti
 {
     public void Configure(EntityTypeBuilder<TbLocaisCompetico> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdLocal })
+            .HasName("PK_LOCAIS_COMPETICOES")
+            .IsClustered(false);
         builder.ToTable("TB_LOCAIS_COMPETICOES");
 
                 builder.HasIndex(e => new { e.IdCliente, e.Cnpj }, "UK_LOCAIS_COMPETICOES_CNPJ")

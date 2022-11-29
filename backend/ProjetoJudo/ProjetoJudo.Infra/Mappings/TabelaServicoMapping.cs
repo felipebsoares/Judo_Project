@@ -8,6 +8,9 @@ public class TabelaServicoMapping : IEntityTypeConfiguration<TbTabelaServico>
 {
     public void Configure(EntityTypeBuilder<TbTabelaServico> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdServico })
+            .HasName("PK_TABELA_SERVICOS")
+            .IsClustered(false);
         builder.ToTable("TB_TABELA_SERVICOS");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TABELA_SERVICOS_SIGLAS")

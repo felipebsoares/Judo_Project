@@ -8,6 +8,9 @@ public class TabelaPesoMapping : IEntityTypeConfiguration<TbTabelaPeso>
 {
     public void Configure(EntityTypeBuilder<TbTabelaPeso> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdClasse, e.IdCategoria })
+            .HasName("PK_TABELA_PESOS")
+            .IsClustered(false);
         builder.ToTable("TB_TABELA_PESOS");
 
                 builder.HasIndex(e => new { e.IdCliente, e.OrdemExibicaoCategoria }, "UK_TABELA_PESOS_ORDENS_EXIBICAO_CATEGORIAS")

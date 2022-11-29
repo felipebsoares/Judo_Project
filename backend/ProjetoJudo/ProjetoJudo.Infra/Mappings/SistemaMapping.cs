@@ -8,6 +8,9 @@ public class SistemaMapping : IEntityTypeConfiguration<TbSistema>
 {
     public void Configure(EntityTypeBuilder<TbSistema> builder)
     {
+        builder.HasKey(e => e.IdSistema)
+            .HasName("PK_SISTEMA")
+            .IsClustered(false);
         builder.ToTable("TB_SISTEMAS");
 
         builder.Property(e => e.IdSistema)

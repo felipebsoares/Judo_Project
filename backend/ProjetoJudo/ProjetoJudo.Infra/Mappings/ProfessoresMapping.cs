@@ -8,6 +8,9 @@ public class ProfessoresMapping : IEntityTypeConfiguration<TbProfessore>
 {
     public void Configure(EntityTypeBuilder<TbProfessore> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdProfessor })
+            .HasName("PK_PROFESSORES")
+            .IsClustered(false);
         builder.ToTable("TB_PROFESSORES");
 
                 builder.HasIndex(e => new { e.IdCliente, e.Apelido }, "UK_PROFESSORES_APELIDOS")

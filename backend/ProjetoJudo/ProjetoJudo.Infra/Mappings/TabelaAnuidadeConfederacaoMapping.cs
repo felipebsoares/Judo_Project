@@ -8,6 +8,9 @@ public class TabelaAnuidadeConfederacaoMapping : IEntityTypeConfiguration<TbTabe
 {
     public void Configure(EntityTypeBuilder<TbTabelasAnuidadesConfederacao> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTabela })
+            .HasName("PK_TABELAS_ANUIDADES_CONFEDERACAO")
+            .IsClustered(false);
         builder.ToTable("TB_TABELAS_ANUIDADES_CONFEDERACAO");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

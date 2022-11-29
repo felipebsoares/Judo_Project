@@ -8,7 +8,11 @@ public class TransferenciaMapping : IEntityTypeConfiguration<TbTransferencia>
 {
     public void Configure(EntityTypeBuilder<TbTransferencia> builder)
     {
-        builder.ToTable("TB_TRANSFERENCIAS");
+        builder.HasKey(e => new { e.IdCliente, e.IdAtleta, e.DataTransferencia })
+                .HasName("PK_TRANSFERENCIAS")
+                .IsClustered(false);
+        
+            builder.ToTable("TB_TRANSFERENCIAS");
 
                 builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");
 

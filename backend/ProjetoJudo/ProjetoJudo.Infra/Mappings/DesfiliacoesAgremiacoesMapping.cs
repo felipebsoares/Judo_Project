@@ -8,6 +8,9 @@ public class DesfiliacoesAgremiacoesMapping : IEntityTypeConfiguration<TbDesfili
 {
     public void Configure(EntityTypeBuilder<TbDesfiliacoesAgremiaco> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdAgremiacao, e.DataDesfiliacao })
+            .HasName("PK_DESFILIACOES_AGREMIACOES")
+            .IsClustered(false);
         builder.ToTable("TB_DESFILIACOES_AGREMIACOES");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

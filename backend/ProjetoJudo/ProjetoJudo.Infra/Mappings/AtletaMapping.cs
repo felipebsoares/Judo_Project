@@ -8,6 +8,9 @@ public class AtletaMapping : IEntityTypeConfiguration<TbAtleta>
 {
     public void Configure(EntityTypeBuilder<TbAtleta> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdAtleta })
+            .HasName("PK_ATLETAS")
+            .IsClustered(false);
         builder.ToTable("TB_ATLETAS");
 
                 builder.HasIndex(e => new { e.IdCliente, e.Cpf }, "UK_ATLETAS_CPF")

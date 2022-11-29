@@ -8,6 +8,9 @@ public class PatrocinadorMapping : IEntityTypeConfiguration<TbPatrocinadore>
 {
     public void Configure(EntityTypeBuilder<TbPatrocinadore> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdPatrocinador })
+            .HasName("PK_PATROCINADORES")
+            .IsClustered(false);
         builder.ToTable("TB_PATROCINADORES");
 
                 builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_PATROCINADORES_SIGLAS")

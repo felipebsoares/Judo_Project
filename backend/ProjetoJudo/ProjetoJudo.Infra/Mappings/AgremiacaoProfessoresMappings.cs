@@ -8,6 +8,10 @@ public class AgremiacaoProfessoresMappings : IEntityTypeConfiguration<TbAgremiac
 {
     public void Configure(EntityTypeBuilder<TbAgremiacoesProfessore> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdAgremiacao, e.IdProfessor })
+                .HasName("PK_AGREMIACOES_PROFESSORES")
+                .IsClustered(false);
+            
         builder.ToTable("TB_AGREMIACOES_PROFESSORES");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

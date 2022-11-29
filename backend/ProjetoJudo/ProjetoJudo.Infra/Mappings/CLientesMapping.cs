@@ -8,6 +8,9 @@ public class CLientesMapping : IEntityTypeConfiguration<TbCliente>
 {
     public void Configure(EntityTypeBuilder<TbCliente> builder)
     {
+        builder.HasKey(e => e.IdCliente)
+            .HasName("PK_CLIENTES")
+            .IsClustered(false);
         builder.ToTable("TB_CLIENTES");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

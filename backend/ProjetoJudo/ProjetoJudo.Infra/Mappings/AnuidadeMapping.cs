@@ -8,6 +8,9 @@ public class AnuidadeMapping : IEntityTypeConfiguration<TbAnuidade>
 {
     public void Configure(EntityTypeBuilder<TbAnuidade> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdAtleta, e.AnoBase })
+            .HasName("PK_ANUIDADES")
+            .IsClustered(false);
         builder.ToTable("TB_ANUIDADES");
 
                 builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

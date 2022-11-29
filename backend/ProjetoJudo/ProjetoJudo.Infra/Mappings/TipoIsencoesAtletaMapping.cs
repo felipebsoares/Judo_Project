@@ -8,6 +8,9 @@ public class TipoIsencoesAtletaMapping : IEntityTypeConfiguration<TbTiposIsencoe
 {
     public void Configure(EntityTypeBuilder<TbTiposIsencoesAtleta> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTipoIsencaoAtleta })
+            .HasName("PK_TIPOS_ISENCOES_ATLETAS")
+            .IsClustered(false);
         builder.ToTable("TB_TIPOS_ISENCOES_ATLETAS");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TIPOS_ISENCOES_ATLETAS_SIGLAS")

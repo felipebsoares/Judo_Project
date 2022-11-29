@@ -8,6 +8,9 @@ public class TipoItemReciboMapping : IEntityTypeConfiguration<TbTiposItensRecibo
 {
     public void Configure(EntityTypeBuilder<TbTiposItensRecibo> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTipoItem })
+            .HasName("PK_TIPOS_ITENS_RECIBOS")
+            .IsClustered(false);
         builder.ToTable("TB_TIPOS_ITENS_RECIBOS");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TIPOS_ITENS_RECIBOS_SIGLAS")

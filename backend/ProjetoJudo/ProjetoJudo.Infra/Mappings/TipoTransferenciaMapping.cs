@@ -8,6 +8,9 @@ public class TipoTransferenciaMapping : IEntityTypeConfiguration<TbTiposTransfer
 {
     public void Configure(EntityTypeBuilder<TbTiposTransferencia> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdTipoTransferencia })
+            .HasName("PK_TIPOS_TRANSFERENCIAS")
+            .IsClustered(false);
         builder.ToTable("TB_TIPOS_TRANSFERENCIAS");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_TIPOS_TRANSFERENCIAS_SIGLAS")

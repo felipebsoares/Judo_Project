@@ -8,6 +8,8 @@ public class FuncaoApoioPessoalApoioMapping : IEntityTypeConfiguration<TbFuncoes
 {
     public void Configure(EntityTypeBuilder<TbFuncoesApoioPessoalApoio> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdFuncao, e.IdApoio })
+            .IsClustered(false);
         builder.ToTable("TB_FUNCOES_APOIO_PESSOAL_APOIO");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

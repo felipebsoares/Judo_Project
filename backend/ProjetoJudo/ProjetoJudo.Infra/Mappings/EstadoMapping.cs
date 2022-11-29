@@ -8,6 +8,9 @@ public class EstadoMapping : IEntityTypeConfiguration<TbEstado>
 {
     public void Configure(EntityTypeBuilder<TbEstado> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdPais, e.IdEstado })
+            .HasName("PK_ESTADOS")
+            .IsClustered(false);
         builder.ToTable("TB_ESTADOS");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

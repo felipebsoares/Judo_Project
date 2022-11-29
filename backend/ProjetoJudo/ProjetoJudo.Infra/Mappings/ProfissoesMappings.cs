@@ -8,6 +8,9 @@ public class ProfissoesMappings : IEntityTypeConfiguration<TbProfisso>
 {
     public void Configure(EntityTypeBuilder<TbProfisso> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdProfissao })
+            .HasName("PK_PROFISSOES")
+            .IsClustered(false);
         builder.ToTable("TB_PROFISSOES");
 
         builder.HasIndex(e => new { e.IdCliente, e.Sigla }, "UK_PROFISSOES_SIGLAS")

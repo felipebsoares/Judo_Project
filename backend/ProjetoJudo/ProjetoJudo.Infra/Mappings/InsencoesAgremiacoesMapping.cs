@@ -8,6 +8,9 @@ public class InsencoesAgremiacoesMapping : IEntityTypeConfiguration<TbIsencoesAg
 {
     public void Configure(EntityTypeBuilder<TbIsencoesAgremiaco> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdAgremiacao, e.DataInicio })
+            .HasName("PK_ISENCOES_AGREMIACOES")
+            .IsClustered(false);
         builder.ToTable("TB_ISENCOES_AGREMIACOES");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");

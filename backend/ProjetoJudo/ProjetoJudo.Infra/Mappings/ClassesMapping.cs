@@ -8,6 +8,9 @@ public class ClassesMapping : IEntityTypeConfiguration<TbClass>
 {
     public void Configure(EntityTypeBuilder<TbClass> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdClasse })
+            .HasName("PK_CLASSES")
+            .IsClustered(false);
         builder.ToTable("TB_CLASSES");
 
                 builder.HasIndex(e => new { e.IdCliente, e.OrdemExibicao }, "UK_CLASSES_ORDENS_EXIBICAO")

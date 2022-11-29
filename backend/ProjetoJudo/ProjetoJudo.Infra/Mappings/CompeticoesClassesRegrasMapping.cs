@@ -8,6 +8,9 @@ public class CompeticoesClassesRegrasMapping : IEntityTypeConfiguration<TbCompet
 {
     public void Configure(EntityTypeBuilder<TbCompeticoesClassesRegra> builder)
     {
+        builder.HasKey(e => new { e.IdCliente, e.IdCompeticao, e.IdClasseReal, e.IdClasseInscricao })
+            .HasName("PK_COMPETICOES_CLASSES_REGRAS")
+            .IsClustered(false);
         builder.ToTable("TB_COMPETICOES_CLASSES_REGRAS");
 
         builder.Property(e => e.IdCliente).HasColumnName("ID_CLIENTE");
