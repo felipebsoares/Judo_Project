@@ -18,9 +18,10 @@ export const Login: React.FC = () => {
 
   const onSubmit: SubmitHandler<LoginForm> = (data) => {
     setIsLoading(true);
-    login(data.email, data.password).then(() => {
+    login(data.email, data.senha).then(() => {
       setIsLoading(false);
     });
+    console.log(data);
   };
 
   return (

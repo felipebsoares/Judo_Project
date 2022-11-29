@@ -46,7 +46,7 @@ export const FormLogin: React.FC<Props> = ({ onSubmit, isLoading }) => {
         />
 
         <Controller
-          name="password"
+          name="senha"
           control={control}
           render={({ field }) => (
             <TextFieldInput
@@ -55,8 +55,8 @@ export const FormLogin: React.FC<Props> = ({ onSubmit, isLoading }) => {
               fullWidth
               label="Senha"
               type={showPassword ? 'text' : 'password'}
-              error={Boolean(errors.password)}
-              helperText={errors.password && errors.password?.message}
+              error={Boolean(errors.senha)}
+              helperText={errors.senha && errors.senha?.message}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
