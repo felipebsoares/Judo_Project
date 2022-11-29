@@ -16,7 +16,7 @@ public class AgremiacaoController : Controller
     private readonly INotificator _notificator;
     private readonly IValidator<CadastrarAgremiacaoDto> _validator;
     private readonly IMapper _mapper;
-    private List<CadastrarAgremiacaoDto> Banco = new();
+    private static readonly List<CadastrarAgremiacaoDto> Banco = new();
 
     public AgremiacaoController(IAgremiacaoService autenticacaoService, INotificator notificator, IValidator<CadastrarAgremiacaoDto> validator, IMapper mapper)
     {
@@ -29,14 +29,6 @@ public class AgremiacaoController : Controller
     [HttpPost("Cadastrar")]
     public async Task<IActionResult> Registrar([FromBody] CadastrarAgremiacaoDto dto)
     {
-        var validacao = await _validator.ValidateAsync(dto);
-
-        if (!validacao.IsValid)
-        { 
-            _notificator.Handle(validacao.Errors);
-            return null;
-        }
-        
         var bancodto = Banco.FirstOrDefault(c => c.Nome == dto.Nome &&
                                                  c.Cnpj == dto.Cnpj);
         if (bancodto != null)
@@ -51,14 +43,7 @@ public class AgremiacaoController : Controller
     [HttpPut("Alterar")]
     public async Task<IActionResult> Alterar([FromBody] CadastrarAgremiacaoDto dto)
     {
-        var validacao = await _validator.ValidateAsync(dto);
-
-        if (!validacao.IsValid)
-        { 
-            _notificator.Handle(validacao.Errors);
-            return null;
-        }
-
+        
         var bancodto = Banco.FirstOrDefault(c => c.Nome == dto.Nome &&
                                                  c.Cnpj == dto.Cnpj);
         if (bancodto != null)
@@ -74,32 +59,28 @@ public class AgremiacaoController : Controller
         }
         
         _mapper.Map(dto, alteraragremiacao);
-        Banco.Add(alteraragremiacao);
         return Ok(dto);
     }
     
     [HttpDelete("Deletar/{id}")]
     public async Task<IActionResult> Deletar(int id)
     {
-        _autenticacaoService.Deletar(id);
-
-        if (_notificator.HasError) return BadRequest(_notificator.Errors);
+        var agremiacao = Banco.FirstOrDefault(c => c.Id == id);
+        Banco.Remove(agremiacao);
         return Ok();
     }
     
     [HttpGet("Listar")]
     public async Task<IActionResult> Listar()
     {
-        var lista =  Banco.ToList();; ;
+        var lista =  Banco.ToList();;
         return Ok(lista);
     }
     
     [HttpGet("Obter/{id}")]
     public async Task<IActionResult> Obter(int id)
     {
-        var lista = _autenticacaoService.Obter(id);
-
-        if (_notificator.HasError) return BadRequest(_notificator.Errors);
-        return Ok(lista);
+        var agremiacao = Banco.FirstOrDefault(c => c.Id == id);
+        return Ok(agremiacao);
     }
 }
