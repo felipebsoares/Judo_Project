@@ -16,14 +16,13 @@ namespace ProjetoJudo.Api.Controllers.Atleta
         // private readonly IAtletaService _atletaSercice;
         // private readonly IMapper _mapper;
         private readonly INotificator _notificator;
+        private static readonly List<CreateAtletaDto> Atletas = new();
 
         public AtletaController(INotificator notificator)
         {
             _notificator = notificator;
         }
 
-        public List<CreateAtletaDto> Atletas { get; set; } = new();
-        
         // public AtletaController(IAtletaService atletaSercice, IMapper mapper, INotificator notificator)
         // {
         //     _atletaSercice = atletaSercice;
@@ -49,7 +48,7 @@ namespace ProjetoJudo.Api.Controllers.Atleta
         [HttpPut("Atualizar-Atleta")]
         public async Task<IActionResult> Update([FromBody] UpdateAtletaDto dto)
         {
-            var atleta = Atletas.FirstOrDefault(c => c.Cpf == dto.Cpf);
+            var atleta = Atletas.FirstOrDefault(c => c.IdAtleta == dto.IdAtleta);
             if (atleta == null)
             {
                 _notificator.HandleNotFoundResource();
@@ -85,6 +84,20 @@ namespace ProjetoJudo.Api.Controllers.Atleta
         public async Task<IActionResult> GetAll()
         {
             return Ok(Atletas.ToList());
+        }
+        
+        [HttpDelete("Remover-Atleta-por-{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var atleta = Atletas.FirstOrDefault(c => c.IdAtleta == id);
+            if (atleta == null)
+            {
+                _notificator.HandleNotFoundResource();
+                return null;
+            }
+
+            Atletas.Remove(atleta);
+            return Ok(Atletas);
         }
     }
 }
