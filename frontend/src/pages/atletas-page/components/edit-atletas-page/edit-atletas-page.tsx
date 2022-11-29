@@ -11,9 +11,21 @@ import { useNavigate } from 'react-router-dom';
 import { PageHeader } from '../../../../shared/components';
 import { LayoutBase } from '../../../../shared/layout';
 import { AtletasForm } from '../../components';
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { FormAtletas } from '../../../../shared/domain-types';
+import { useState } from 'react';
 
 export const EditAtletasPage: React.FC = () => {
+  const form = useForm<FormAtletas>({
+    mode: 'onChange',
+  });
+
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit: SubmitHandler<FormAtletas> = (data) => {
+    console.log(data);
+  };
 
   return (
     <LayoutBase>
@@ -37,7 +49,9 @@ export const EditAtletasPage: React.FC = () => {
 
             <Divider />
           </Box>
-          <AtletasForm />
+          <FormProvider {...form}>
+            <AtletasForm id="add-atletas-form" onSubmit={onSubmit} />
+          </FormProvider>
         </CardContent>
       </Card>
 
@@ -56,7 +70,13 @@ export const EditAtletasPage: React.FC = () => {
         >
           Cancelar
         </Button>
-        <Button variant="contained" color="primary">
+        <Button
+          form="add-atletas-form"
+          type="submit"
+          variant="contained"
+          color="primary"
+          disabled={!form.formState.isValid}
+        >
           Salvar
         </Button>
       </Box>

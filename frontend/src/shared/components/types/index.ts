@@ -9,16 +9,11 @@ export interface PageHeaderProps {
 }
 
 export type TableData = {
-  name: string;
-  calories: number;
-  fat: number;
-  carbs: number;
-  protein: number;
-};
-
-export type TableProps = {
-  rows: TableData[];
-  removeModal: () => void;
+  nameAthlete: string;
+  professionAthlete: string;
+  selection: string;
+  federation: string;
+  confederation: string;
 };
 
 export type ModalProps = {

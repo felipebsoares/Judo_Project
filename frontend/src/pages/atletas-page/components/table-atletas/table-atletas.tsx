@@ -10,9 +10,14 @@ import {
   TableRow,
 } from '@mui/material';
 import * as S from './styles';
-import { TableProps } from '../types';
+import { TableDataRows } from './types';
 
-export const Table: React.FC<TableProps> = ({ rows, removeModal }) => {
+export type TableProps = {
+  rows: TableDataRows[];
+  removeModal: () => void;
+};
+
+export const TableAtletas: React.FC<TableProps> = ({ rows, removeModal }) => {
   const navigate = useNavigate();
 
   return (
@@ -20,29 +25,34 @@ export const Table: React.FC<TableProps> = ({ rows, removeModal }) => {
       <TableMaterial sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <S.StyledTableCell>Dessert (100g serving)</S.StyledTableCell>
-            <S.StyledTableCell align="center">Calories</S.StyledTableCell>
-            <S.StyledTableCell align="center">Fat&nbsp;(g)</S.StyledTableCell>
-            <S.StyledTableCell align="center">Carbs&nbsp;(g)</S.StyledTableCell>
+            <S.StyledTableCell align="center">Nome</S.StyledTableCell>
             <S.StyledTableCell align="center">
-              Protein&nbsp;(g)
+              Profissão Atleta
             </S.StyledTableCell>
+            <S.StyledTableCell align="center">Seleção</S.StyledTableCell>
+            <S.StyledTableCell align="center">Federação</S.StyledTableCell>
+            <S.StyledTableCell align="center">Confederação</S.StyledTableCell>
             <S.StyledTableCell align="center">Ações</S.StyledTableCell>
           </TableRow>
         </TableHead>
+
         <TableBody>
           {rows.map((row, index) => (
-            <S.StyledTableRow key={row.name}>
-              <S.StyledTableCell component="th" scope="row">
-                {row.name}
+            <S.StyledTableRow key={index}>
+              <S.StyledTableCell align="center" component="th" scope="row">
+                {row.nameAthlete}
               </S.StyledTableCell>
               <S.StyledTableCell align="center">
-                {row.calories}
+                {row.profession}
               </S.StyledTableCell>
-              <S.StyledTableCell align="center">{row.fat}</S.StyledTableCell>
-              <S.StyledTableCell align="center">{row.carbs}</S.StyledTableCell>
               <S.StyledTableCell align="center">
-                {row.protein}
+                {row.selection}
+              </S.StyledTableCell>
+              <S.StyledTableCell align="center">
+                {row.federation}
+              </S.StyledTableCell>
+              <S.StyledTableCell align="center">
+                {row.confederation}
               </S.StyledTableCell>
               <S.StyledTableCell align="center">
                 <IconButton size="small">

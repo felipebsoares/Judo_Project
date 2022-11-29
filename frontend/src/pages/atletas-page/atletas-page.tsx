@@ -3,26 +3,23 @@ import { useNavigate } from 'react-router-dom';
 import { SportsKabaddi } from '@mui/icons-material';
 import { useModal } from '../../shared/hooks';
 import { LayoutBase } from '../../shared/layout';
-import { PageHeader, TableData, Table } from '../../shared/components';
-import { RemoveAtletasModal } from './components';
-
-const rows: TableData[] = [
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-  { name: 'Frozen yoghurt', calories: 159, carbs: 6.0, fat: 24, protein: 4.0 },
-];
+import { PageHeader } from '../../shared/components';
+import { TableDataRows, RemoveAtletasModal, TableAtletas } from './components';
 
 export const AtletasPage: React.FC = () => {
   const navigate = useNavigate();
 
   const [isRemoveModalOpen, openRemoveModal, closeRemoveModal] = useModal();
+
+  const rows: TableDataRows[] = [
+    {
+      nameAthlete: 'João Augusto',
+      profession: 'Goleiro',
+      selection: 'equador',
+      federation: 'Brasil',
+      confederation: 'Não sei',
+    },
+  ];
 
   return (
     <>
@@ -40,7 +37,8 @@ export const AtletasPage: React.FC = () => {
             </Button>
           }
         />
-        <Table rows={rows} removeModal={openRemoveModal} />
+
+        <TableAtletas rows={rows} removeModal={openRemoveModal} />
       </LayoutBase>
 
       <RemoveAtletasModal
