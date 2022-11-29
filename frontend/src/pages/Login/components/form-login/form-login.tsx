@@ -4,7 +4,6 @@ import { SubmitHandler, useFormContext, Controller } from 'react-hook-form';
 import {
   Box,
   Button,
-  TextField,
   CircularProgress,
   InputAdornment,
   IconButton,
@@ -70,23 +69,6 @@ export const FormLogin: React.FC<Props> = ({ onSubmit, isLoading }) => {
                   </InputAdornment>
                 ),
               }}
-              {...field}
-            />
-          )}
-        />
-
-        <Controller
-          name="client"
-          control={control}
-          render={({ field }) => (
-            <TextFieldInput
-              required
-              variant="filled"
-              fullWidth
-              label="Cliente"
-              type="text"
-              error={Boolean(errors.client)}
-              helperText={errors.client && errors.client?.message}
               {...field}
             />
           )}

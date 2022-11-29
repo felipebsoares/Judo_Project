@@ -1,11 +1,14 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import { ReactNode } from 'react';
+import { useAuth } from '../../hooks';
 
 type Props = {
   children: ReactNode;
 };
 
 export const LayoutBase: React.FC<Props> = ({ children }) => {
+  const { logout } = useAuth();
+
   return (
     <Box
       sx={{
@@ -18,7 +21,9 @@ export const LayoutBase: React.FC<Props> = ({ children }) => {
             Federação de Judô
           </Typography>
           <Box>
-            <Button sx={{ color: '#fff' }}>Logout</Button>
+            <Button onClick={logout} sx={{ color: '#fff' }}>
+              Logout
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

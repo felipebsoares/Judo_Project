@@ -1,22 +1,15 @@
 import { useState } from 'react';
-import {
-  Box,
-  Typography,
-  Link,
-  Button,
-  Card,
-  CardContent,
-} from '@mui/material';
+import { Box, Typography, Link, Card, CardContent } from '@mui/material';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
 import { FormLogin } from './components';
 import { LoginForm, loginValidator } from '../../shared/domain-types';
-import { PageHeader } from '../../shared/components';
-import { Visibility } from '@mui/icons-material';
+import { useAuth } from '../../shared/hooks';
 
 export const Login: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const { login } = useAuth();
 
   const form = useForm<LoginForm>({
     mode: 'onChange',
@@ -24,7 +17,10 @@ export const Login: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<LoginForm> = (data) => {
-    console.log(data);
+    setIsLoading(true);
+    login(data.email, data.password).then(() => {
+      setIsLoading(false);
+    });
   };
 
   return (
