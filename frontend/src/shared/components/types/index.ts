@@ -8,14 +8,6 @@ export interface PageHeaderProps {
   action?: ReactNode;
 }
 
-export type TableData = {
-  nameAthlete: string;
-  professionAthlete: string;
-  selection: string;
-  federation: string;
-  confederation: string;
-};
-
 export type ModalProps = {
   handleClickOpen: () => void;
   handleClose: () => void;

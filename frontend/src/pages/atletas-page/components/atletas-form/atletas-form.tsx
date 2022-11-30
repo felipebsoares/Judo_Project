@@ -446,36 +446,6 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
             )}
           />
         </Grid>
-
-        <Grid item lg={3} xs={12}>
-          <Controller
-            name="selecao"
-            control={control}
-            render={({ field }) => (
-              <TextFieldInput
-                fullWidth
-                label="Seleção"
-                variant="filled"
-                {...field}
-              />
-            )}
-          />
-        </Grid>
-
-        <Grid item lg={3} xs={12}>
-          <Controller
-            name="cliente"
-            control={control}
-            render={({ field }) => (
-              <TextFieldInput
-                fullWidth
-                label="Cliente"
-                variant="filled"
-                {...field}
-              />
-            )}
-          />
-        </Grid>
       </Grid>
     </form>
   );

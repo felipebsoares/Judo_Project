@@ -28,6 +28,4 @@ export type FormAtletas = {
   sexo: string;
   estado_civil: string;
   anotacoes: string;
-  selecao: string;
-  cliente: string;
 };
