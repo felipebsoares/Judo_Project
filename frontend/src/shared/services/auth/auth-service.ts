@@ -3,12 +3,12 @@ import { Auth } from '../types';
 
 export const AuthService = async (
   email: string | undefined,
-  password: string | undefined,
+  senha: string | undefined,
 ): Promise<Auth | Error> => {
   try {
     const { data } = await api.post('/Auth/Login', {
       email,
-      password,
+      senha,
     });
 
     if (data) {
@@ -17,10 +17,6 @@ export const AuthService = async (
 
     return new Error('Erro no Login!');
   } catch (error: any) {
-    return new Error(
-      error.response?.data.erros ||
-        (error as { message: string }).message ||
-        'Erro no Login',
-    );
+    return new Error('Erro no Login');
   }
 };

@@ -16,6 +16,8 @@ import { LayoutBase } from '../../../../shared/layout';
 import { PageHeader } from '../../../../shared/components';
 import { FormAtletas } from '../../../../shared/domain-types';
 import { useState } from 'react';
+import { ListCreate } from '../../../../shared/services/atletas';
+import { Alert } from '../../../../shared/adapters';
 
 export const AddAtletasPage: React.FC = () => {
   const form = useForm<FormAtletas>({
@@ -26,7 +28,27 @@ export const AddAtletasPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit: SubmitHandler<FormAtletas> = (data) => {
-    console.log(data);
+    setIsLoading(true);
+    ListCreate(data).then((result) => {
+      if (result instanceof Error) {
+        setIsLoading(false);
+        console.log(result);
+        Alert.callError({
+          title: (result as Error).name,
+          description: (result as Error).message,
+        });
+
+        form.reset();
+        return;
+      }
+
+      setIsLoading(false);
+
+      Alert.callSuccess({
+        title: 'Atleta cadastrado',
+        onConfirm: () => navigate('/atletas'),
+      });
+    });
   };
 
   return (

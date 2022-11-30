@@ -20,8 +20,8 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
   }, []);
 
   const login = useCallback(
-    async (email: string | undefined, password: string | undefined) => {
-      const result = await AuthService(email, password);
+    async (email: string | undefined, senha: string | undefined) => {
+      const result = await AuthService(email, senha);
 
       if (result instanceof Error) {
         Alert.callError({
@@ -30,9 +30,9 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
         });
         return;
       } else {
-        localStorage.setItem('@judo:user', JSON.stringify(result.user));
-        localStorage.setItem('@judo:accessToken', result.accessToken);
-        api.defaults.headers.common.Authorization = `Bearer ${result.accessToken}`;
+        localStorage.setItem('@judo:user', JSON.stringify(result.email));
+        localStorage.setItem('@judo:accessToken', result.token);
+        api.defaults.headers.common.Authorization = `Bearer ${result.token}`;
       }
 
       setIsAuthenticated(true);
