@@ -55,12 +55,38 @@ namespace ProjetoJudo.Api.Controllers.Atleta
                 return null;
             }
 
-            atleta.Cpf = dto.Cpf;
-            atleta.Email = dto.Email;
-            atleta.Nome = dto.Nome;
-            atleta.Telefone = dto.Telefone;
-            atleta.DataNascimento = dto.DataNascimento;
             atleta.IdAtleta = dto.IdAtleta;
+            atleta.RegistroFederacao = dto.RegistroFederacao;
+            atleta.RegistroConfederacao = dto.RegistroConfederacao;
+            atleta.Nome = dto.Nome;
+            atleta.DataNascimento = dto.DataNascimento;
+            atleta.DataFiliacao = dto.DataFiliacao;
+            atleta.IdAgremiacao = dto.IdAgremiacao;
+            atleta.Cep = dto.Cep;
+            atleta.Endereco = dto.Endereco;
+            atleta.Bairro = dto.Bairro;
+            atleta.Complemento = dto.Complemento;
+            atleta.IdCidade = dto.IdCidade;
+            atleta.IdEstado = dto.IdEstado;
+            atleta.IdPais = dto.IdPais;
+            atleta.Telefone = dto.Telefone;
+            atleta.Email = dto.Email;
+            atleta.Cpf = dto.Cpf;
+            atleta.Identidade = dto.Identidade;
+            atleta.DataIdentidade = dto.DataIdentidade;
+            atleta.IdEmissor = dto.IdEmissor;
+            atleta.IdNacionalidade = dto.IdNacionalidade;
+            atleta.IdProfissaoAtleta = dto.IdProfissaoAtleta;
+            atleta.NomePai = dto.NomePai;
+            atleta.IdProfissaoPai = dto.IdProfissaoPai;
+            atleta.NomeMae = dto.NomeMae;
+            atleta.IdProfissaoMae = dto.IdProfissaoMae;
+            atleta.IdFaixa = dto.IdFaixa;
+            atleta.IdSexo = dto.IdSexo;
+            atleta.IdEstadoCivil = dto.IdEstadoCivil;
+            atleta.Anotacoes = dto.Anotacoes;
+            atleta.Selecao = dto.Selecao;
+            atleta.IdCliente = dto.IdCliente;
 
             return Ok(atleta);
         }
