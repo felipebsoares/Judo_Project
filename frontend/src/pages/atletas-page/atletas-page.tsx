@@ -4,22 +4,31 @@ import { SportsKabaddi } from '@mui/icons-material';
 import { useModal } from '../../shared/hooks';
 import { LayoutBase } from '../../shared/layout';
 import { PageHeader } from '../../shared/components';
-import { TableDataRows, RemoveAtletasModal, TableAtletas } from './components';
+import { RemoveAtletasModal, TableAtletas } from './components';
+import { useEffect, useState } from 'react';
+import { ListGetAll } from '../../shared/services/atletas';
+import { Alert } from '../../shared/adapters';
+import { Atletas } from '../../shared/services';
 
 export const AtletasPage: React.FC = () => {
   const navigate = useNavigate();
+  const [data, setData] = useState<Atletas[]>([]);
 
   const [isRemoveModalOpen, openRemoveModal, closeRemoveModal] = useModal();
 
-  const rows: TableDataRows[] = [
-    {
-      nameAthlete: 'João Augusto',
-      profession: 'Goleiro',
-      selection: 'equador',
-      federation: 'Brasil',
-      confederation: 'Não sei',
-    },
-  ];
+  useEffect(() => {
+    ListGetAll().then((result) => {
+      if (result instanceof Error) {
+        Alert.callError({
+          title: (result as Error).name,
+          description: (result as Error).message,
+        });
+        return;
+      } else {
+        setData(result);
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -38,7 +47,7 @@ export const AtletasPage: React.FC = () => {
           }
         />
 
-        <TableAtletas rows={rows} removeModal={openRemoveModal} />
+        <TableAtletas rows={data} removeModal={openRemoveModal} />
       </LayoutBase>
 
       <RemoveAtletasModal

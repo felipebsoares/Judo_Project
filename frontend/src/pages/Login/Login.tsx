@@ -6,8 +6,10 @@ import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { FormLogin } from './components';
 import { LoginForm, loginValidator } from '../../shared/domain-types';
 import { useAuth } from '../../shared/hooks';
+import { useNavigate } from 'react-router-dom';
 
 export const Login: React.FC = () => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
 
@@ -20,6 +22,7 @@ export const Login: React.FC = () => {
     setIsLoading(true);
     login(data.email, data.senha).then(() => {
       setIsLoading(false);
+      navigate('/atletas');
     });
     console.log(data);
   };

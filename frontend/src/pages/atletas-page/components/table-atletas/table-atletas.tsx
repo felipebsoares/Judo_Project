@@ -10,10 +10,10 @@ import {
   TableRow,
 } from '@mui/material';
 import * as S from './styles';
-import { TableDataRows } from './types';
+import { Atletas } from '../../../../shared/services';
 
 export type TableProps = {
-  rows: TableDataRows[];
+  rows: Atletas[];
   removeModal: () => void;
 };
 
@@ -26,12 +26,14 @@ export const TableAtletas: React.FC<TableProps> = ({ rows, removeModal }) => {
         <TableHead>
           <TableRow>
             <S.StyledTableCell align="center">Nome</S.StyledTableCell>
+            <S.StyledTableCell align="center">CPF</S.StyledTableCell>
+            <S.StyledTableCell align="center">Identidade</S.StyledTableCell>
             <S.StyledTableCell align="center">
-              Profissão Atleta
+              Registro Federação
             </S.StyledTableCell>
-            <S.StyledTableCell align="center">Seleção</S.StyledTableCell>
-            <S.StyledTableCell align="center">Federação</S.StyledTableCell>
-            <S.StyledTableCell align="center">Confederação</S.StyledTableCell>
+            <S.StyledTableCell align="center">
+              Registro Confederação
+            </S.StyledTableCell>
             <S.StyledTableCell align="center">Ações</S.StyledTableCell>
           </TableRow>
         </TableHead>
@@ -40,19 +42,17 @@ export const TableAtletas: React.FC<TableProps> = ({ rows, removeModal }) => {
           {rows.map((row, index) => (
             <S.StyledTableRow key={index}>
               <S.StyledTableCell align="center" component="th" scope="row">
-                {row.nameAthlete}
+                {row.nome}
+              </S.StyledTableCell>
+              <S.StyledTableCell align="center">{row.cpf}</S.StyledTableCell>
+              <S.StyledTableCell align="center">
+                {row.identidade}
               </S.StyledTableCell>
               <S.StyledTableCell align="center">
-                {row.profession}
+                {row.registroFederacao}
               </S.StyledTableCell>
               <S.StyledTableCell align="center">
-                {row.selection}
-              </S.StyledTableCell>
-              <S.StyledTableCell align="center">
-                {row.federation}
-              </S.StyledTableCell>
-              <S.StyledTableCell align="center">
-                {row.confederation}
+                {row.registroConfederacao}
               </S.StyledTableCell>
               <S.StyledTableCell align="center">
                 <IconButton size="small">

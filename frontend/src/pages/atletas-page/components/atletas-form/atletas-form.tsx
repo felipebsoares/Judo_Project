@@ -9,18 +9,14 @@ type Props = {
 };
 
 export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
-  const {
-    handleSubmit,
-    formState: { isValid, errors },
-    control,
-  } = useFormContext<FormAtletas>();
+  const { handleSubmit, control } = useFormContext<FormAtletas>();
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} id={id}>
       <Grid container spacing={2}>
         <Grid item lg={3} xs={12}>
           <Controller
-            name="registro_federacao"
+            name="registroFederacao"
             control={control}
             render={({ field }) => (
               <TextFieldInput
@@ -35,7 +31,7 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="registro_confederacao"
+            name="registroConfederacao"
             control={control}
             render={({ field }) => (
               <TextFieldInput
@@ -63,11 +59,12 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
         </Grid>
         <Grid item lg={3} xs={12}>
           <Controller
-            name="data_nascimento"
+            name="dataNascimento"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
+                type="date"
                 label="Data de Nascimento"
                 variant="filled"
                 {...field}
@@ -78,11 +75,12 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="data_filiacao"
+            name="dataFiliacao"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
+                type="date"
                 label="Data Filiação"
                 variant="filled"
                 {...field}
@@ -93,12 +91,13 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="agremiacao"
+            name="idAgremiacao"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Agremiação"
+                type="number"
                 variant="filled"
                 {...field}
               />
@@ -165,12 +164,13 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
         </Grid>
         <Grid item lg={3} xs={12}>
           <Controller
-            name="cidade"
+            name="idCidade"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Cidade"
+                type="number"
                 variant="filled"
                 {...field}
               />
@@ -179,12 +179,13 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
         </Grid>
         <Grid item lg={3} xs={12}>
           <Controller
-            name="estado"
+            name="idEstado"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Estado"
+                type="number"
                 variant="filled"
                 {...field}
               />
@@ -194,13 +195,14 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="pais"
+            name="idPais"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="País"
                 variant="filled"
+                type="number"
                 {...field}
               />
             )}
@@ -269,13 +271,14 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="data_de_identidade"
+            name="dataIdentidade"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Data de Identidade"
                 variant="filled"
+                type="date"
                 {...field}
               />
             )}
@@ -284,12 +287,13 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="emissor"
+            name="idEmissor"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Emissor"
+                type="number"
                 variant="filled"
                 {...field}
               />
@@ -299,13 +303,14 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="nacionalidade"
+            name="idNacionalidade"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Nacionalidade"
                 variant="filled"
+                type="number"
                 {...field}
               />
             )}
@@ -314,13 +319,14 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="profissao_atleta"
+            name="idProfissaoAtleta"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Profissão Atleta"
                 variant="filled"
+                type="number"
                 {...field}
               />
             )}
@@ -329,7 +335,7 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="nome_pai"
+            name="nomePai"
             control={control}
             render={({ field }) => (
               <TextFieldInput
@@ -344,13 +350,14 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="profissao_pai"
+            name="idProfissaoPai"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Profissão do Pai"
                 variant="filled"
+                type="number"
                 {...field}
               />
             )}
@@ -359,7 +366,7 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="nome_mae"
+            name="nomeMae"
             control={control}
             render={({ field }) => (
               <TextFieldInput
@@ -374,12 +381,13 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="profissao_mae"
+            name="idProfissaoMae"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Profissão da Mãe"
+                type="number"
                 variant="filled"
                 {...field}
               />
@@ -389,13 +397,14 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="faixa"
+            name="idFaixa"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Faixa"
                 variant="filled"
+                type="number"
                 {...field}
               />
             )}
@@ -404,13 +413,14 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="sexo"
+            name="idSexo"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Sexo"
                 variant="filled"
+                type="number"
                 {...field}
               />
             )}
@@ -419,13 +429,14 @@ export const AtletasForm: React.FC<Props> = ({ onSubmit, id }) => {
 
         <Grid item lg={3} xs={12}>
           <Controller
-            name="estado_civil"
+            name="idEstadoCivil"
             control={control}
             render={({ field }) => (
               <TextFieldInput
                 fullWidth
                 label="Estado Civil"
                 variant="filled"
+                type="number"
                 {...field}
               />
             )}
