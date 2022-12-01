@@ -1,5 +1,5 @@
 export type Atletas = {
-  idAtleta: string;
+  idAtleta: number;
   registroFederacao: string;
   registroConfederacao: string;
   nome: string;

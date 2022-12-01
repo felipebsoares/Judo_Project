@@ -13,8 +13,14 @@ import { Atletas } from '../../shared/services';
 export const AtletasPage: React.FC = () => {
   const navigate = useNavigate();
   const [data, setData] = useState<Atletas[]>([]);
+  const [selectedList, setSelectedList] = useState<Atletas>();
 
   const [isRemoveModalOpen, openRemoveModal, closeRemoveModal] = useModal();
+
+  const handleRemove = (atletas: Atletas) => {
+    setSelectedList(atletas);
+    openRemoveModal();
+  };
 
   useEffect(() => {
     ListGetAll().then((result) => {
@@ -47,12 +53,15 @@ export const AtletasPage: React.FC = () => {
           }
         />
 
-        <TableAtletas rows={data} removeModal={openRemoveModal} />
+        <TableAtletas rows={data} handleRemove={handleRemove} />
       </LayoutBase>
 
       <RemoveAtletasModal
+        id={selectedList?.idAtleta}
         handleClose={closeRemoveModal}
         open={isRemoveModalOpen}
+        name={selectedList?.nome}
+        setData={setData}
       />
     </>
   );

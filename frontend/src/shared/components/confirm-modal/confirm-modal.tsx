@@ -14,6 +14,7 @@ export const ConfirmModal: React.FC<ConfirmModalProps> = ({
   title,
   message,
   maxWidth = 'sm',
+  onConfirm,
 }) => {
   return (
     <Dialog maxWidth={maxWidth} open={open} onClose={handleClose}>
@@ -27,7 +28,7 @@ export const ConfirmModal: React.FC<ConfirmModalProps> = ({
         <Button variant="contained" color="error" onClick={handleClose}>
           Fechar
         </Button>
-        <Button variant="contained" color="primary" onClick={handleClose}>
+        <Button variant="contained" color="primary" onClick={onConfirm}>
           Confirmar
         </Button>
       </DialogActions>

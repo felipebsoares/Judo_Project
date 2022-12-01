@@ -14,10 +14,10 @@ import { Atletas } from '../../../../shared/services';
 
 export type TableProps = {
   rows: Atletas[];
-  removeModal: () => void;
+  handleRemove: (atletas: Atletas) => void;
 };
 
-export const TableAtletas: React.FC<TableProps> = ({ rows, removeModal }) => {
+export const TableAtletas: React.FC<TableProps> = ({ rows, handleRemove }) => {
   const navigate = useNavigate();
 
   return (
@@ -56,7 +56,7 @@ export const TableAtletas: React.FC<TableProps> = ({ rows, removeModal }) => {
               </S.StyledTableCell>
               <S.StyledTableCell align="center">
                 <IconButton size="small">
-                  <Delete onClick={removeModal} />
+                  <Delete onClick={() => handleRemove(row)} />
                 </IconButton>
                 <IconButton size="small">
                   <Edit onClick={() => navigate(`/atletas/${index}`)} />

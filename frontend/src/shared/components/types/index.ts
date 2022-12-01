@@ -25,6 +25,7 @@ export type ConfirmModalProps = Omit<
   title: string;
   message: string;
   maxWidth?: false | Breakpoint | undefined;
+  onConfirm?: () => void;
 };
 
 export type TextFieldInputProps = TextFieldProps;
