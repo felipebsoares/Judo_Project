@@ -40,6 +40,8 @@ namespace ProjetoJudo.Api.Controllers.Atleta
                 _notificator.Handle("Já existe um atleta com o cpf informado");
                 return null;
             }
+            
+            dto.IdAtleta = Atletas.Count;
             Atletas.Add(dto);
             return Ok(dto);
         }
@@ -126,4 +128,5 @@ namespace ProjetoJudo.Api.Controllers.Atleta
             return Ok(Atletas);
         }
     }
+    
 }
